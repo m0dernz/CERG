@@ -124,6 +124,7 @@ The Threat Intelligence Analyst and the project team provide inputs before the s
 | Known vulnerabilities and prior findings | Exposure Management Lead, Adversarial Testing Lead | Existing systems and material changes |
 | Relevant threat intelligence | Threat Intelligence Analyst, OT Risk Analyst where OT is in scope | Every model |
 | Applicable control requirements | Governance Pillar Leader, compliance manager as applicable | Regulated or audited systems |
+| Crown jewel scenarios | Crown Jewel Register ([CJ-001](../governance/CERG-GOV-CJ-001_Crown_Jewel_Register_and_Scenario_Library.md)) | Assets on the Crown Jewel Register. Import associated loss scenarios as mandatory threat model scenarios. Model attack paths to each chain-breaking control (CJ-001 §3.3). Record the imported scenario ID in the threat model record |
 
 ---
 
