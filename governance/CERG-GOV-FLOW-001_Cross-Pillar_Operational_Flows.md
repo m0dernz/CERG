@@ -165,6 +165,8 @@ Every material workflow must resolve to one primary system-of-record object:
 - **Improvement Record**
 - **Control Change Record**
 - **Reporting Metric Record**
+- **Delegation Record** — Records a formal delegation of authority from a principal (e.g., CISO) to a delegate. Required for every "CISO designee" reference. Fields: delegation_id, principal_role, delegate_role, delegated_authorities, effective_date, expiry_date, CISO_approval_ref.
+- **Stop-the-Line Record** — Records an escalation raised by any CERG team member who believes a decision materially violates policy or creates regulatory exposure. Fields: stl_id, trigger, originating_pillar, decision_challenged, policy_or_regulatory_citation, CISO_disposition, disposition_timestamp.
 
 ---
 
