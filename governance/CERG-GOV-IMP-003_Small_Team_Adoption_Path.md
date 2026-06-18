@@ -168,7 +168,15 @@ A 5-person team covers all 27 canonical roles by consolidating them. The map bel
 | **Person 4 — Security Engineer** | Application Security Engineer, Cryptography Engineer, OT Security Engineer (if applicable), Pre-production Reviewer | JF-SECENG |
 | **Person 5 — Compliance / IR Liaison** | NERC-CIP Compliance Manager, CMMC/Federal Compliance Manager, SOX ITGC Lead, IR liaison (Incident Commander and Lead Investigator remain with standing IR team) | JF-GOVCOMP / JF-ADJUNCT |
 
-**If you have 3 people:** Consolidate further. Person 1 = CISO + Governance + Risk Register. Person 2 = Engineering + Cloud + Identity. Person 3 = Risk + Compliance + VM. Document every consolidation in the Decision Log per IMP-002 §4. The Role Collision Guide (IMP-002 §7) defines which consolidations require compensating controls.
+**If you have 3 people:** Consolidate further using the map below. This is one example — adapt to your team's skills. Each consolidation concentrates risk; compensating controls are mandatory, not optional.
+
+| Person | Canonical Roles Consolidated | Primary Family | Compensating Controls |
+|--------|------------------------------|----------------|-----------------------|
+| **Person 1 — CISO / Governance / Risk Register** | CISO, Governance Pillar Leader, Policy & Standards Manager, Risk Register Owner, Evidence Librarian | JF-EXEC / JF-GOVCOMP | Executive Sponsor reviews all High/Critical risk acceptances. Quarterly independent peer review of risk register completeness (external facilitator or adjacent team). No single-person approval for exceptions where Person 1 is the asset owner. |
+| **Person 2 — Engineering / Cloud / Identity** | Engineering Pillar Leader, Cloud Security Engineer, Identity Engineer, Endpoint Engineer, Pre-production Reviewer | JF-SECENG | Architecture review disposition requires documented second-opinion check with Person 3. Emergency changes require post-hoc review within 48 hours by Person 1. Pre-production reviewer role rotates quarterly or annually. |
+| **Person 3 — Risk / Compliance / VM** | Risk Pillar Leader, Exposure Management Lead, Compliance Manager (NERC, CUI, SOX as applicable), Threat Intelligence Analyst, Vendor Risk Analyst | JF-RISKOPS / JF-GOVCOMP | Compliance findings and exposure backlog cross-checked monthly by Person 1. Vendor risk assessments over a defined threshold (e.g., High/Critical) require joint sign-off with Person 2. |
+
+Document every consolidation in the Decision Log per IMP-002 §4. The Role Collision Guide (IMP-002 §7) defines which consolidations require compensating controls. If any compensating control above conflicts with local policy, escalate to the CISO or equivalent security owner before adopting the consolidation.
 
 **If you have 1 person:** You are not ready to adopt CERG as an operating model. Use CERG as a planning reference. Hire your second person before attempting adoption.
 
