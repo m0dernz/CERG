@@ -108,6 +108,21 @@ Every control entry in the baseline carries one of the following statuses. The s
 >
 > "In Progress," "Undetermined," "Working On It," and "Vendor Says Yes" are not statuses. Every entry in the baseline maps to one of the six above. Honesty about Partially Implemented and Planned is worth far more than optimism about Implemented.
 
+### 4.1 Evidence Tier Requirements per Status
+
+Each control status requires a minimum evidence tier as defined in [CERG-GOV-AUD-001](CERG-GOV-AUD-001_Evidence_Quality_Standard.md). The table below is the authoritative mapping. Collectively attested or system-generated evidence must be retrievable per the retrieval SLA in AUD-001.
+
+| Control Status | Minimum Evidence Tier | Guidance |
+|----------------|----------------------|----------|
+| Implemented | E2 (E3 for Critical/High overlay controls) | System-generated evidence (E2) for standard controls. Independent verification (E3) required where the applicable overlay (Section 8) marks the control as Critical or High impact. |
+| Partially Implemented | E2 for implemented portion + E1 for POA&M | The implemented scope must meet E2. The documented gap and remediation plan (POA&M) is self-attested (E1). |
+| Inherited | Provider E2/E3 + Customer E2 | Provider evidence must meet E2 or E3 per the Inheritance Evidence Package (Section 5). Customer-side configuration proof must meet E2 (screenshot, config export, or automated attestation). |
+| Planned | E1 (design artifact) | Design document, architecture diagram, or procurement record showing intent. No operating evidence required. |
+| Risk Accepted | E2 (risk acceptance record) + compensating control evidence | Risk acceptance record (per PRC-RM-001) must be durable evidence, not a verbal or email-only approval. Compensating control evidence at E2 minimum. |
+| Not Applicable | E1 (rationale document) | Written rationale explaining why the control does not apply. Must include system type, data classification, or regulatory exclusion basis. |
+
+This mapping is enforced by the validator (tools/cerg-validate.py). Controls marked `Implemented` without a traceable E2-or-higher evidence artifact are flagged as a validation warning.
+
 ---
 
 ## 5. Inheritance Model
