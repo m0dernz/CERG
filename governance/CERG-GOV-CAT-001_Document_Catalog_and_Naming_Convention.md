@@ -294,6 +294,12 @@ The V1 library is the set below. Every artifact listed has either an approved or
 | [`CERG-GOV-IMPREG-001`](CERG-GOV-IMPREG-001_Program_Improvement_Register.md) | Program Improvement Register | Governance Pillar Leader | Approved |
 | [`CERG-GOV-CEF-001`](CERG-GOV-CEF-001_Control_Effectiveness_Framework.md) | Control Effectiveness Framework | Governance Pillar Leader | Approved |
 | [`CERG-GOV-AUD-001`](CERG-GOV-AUD-001_Evidence_Quality_Standard.md) | Evidence Quality Standard | Governance Pillar Leader | Approved |
+| [`CERG-GOV-ADR-001`](../governance/adr/ADR-001-Three-Pillars.md) | ADR-001: Three-Pillar Operating Model | Governance Pillar Leader | Approved |
+| [`CERG-GOV-ADR-002`](../governance/adr/ADR-002-NIST-Spine.md) | ADR-002: NIST 800-53 as Control Spine | Governance Pillar Leader | Approved |
+| [`CERG-GOV-ADR-003`](../governance/adr/ADR-003-FAIR-Risk-Statements.md) | ADR-003: FAIR-Aligned Risk Statements | Governance Pillar Leader | Approved |
+| [`CERG-GOV-ADR-004`](../governance/adr/ADR-004-Overlay-Model.md) | ADR-004: Overlay Control Model | Governance Pillar Leader | Approved |
+| [`CERG-GOV-ADR-005`](../governance/adr/ADR-005-Evidence-Tiers.md) | ADR-005: Evidence Tiers E1/E2/E3 | Governance Pillar Leader | Approved |
+| [`CERG-GOV-ADR-006`](../governance/adr/ADR-006-Inheritance-Package.md) | ADR-006: Inheritance Evidence Package | Governance Pillar Leader | Approved |
 | [`CERG-GOV-JA-001`](CERG-GOV-JA-001_Job_Architecture_and_Grade_Framework.md) | Job Architecture and Grade Framework | Governance Pillar Leader (Policy & Standards) | Approved |
 | [`CERG-GOV-JD-001`](CERG-GOV-JD-001_CERG_Job_Descriptions.md) | CERG Job Descriptions | Governance Pillar Leader (Policy & Standards) | Approved |
 | [`CERG-GOV-CMP-001`](CERG-GOV-CMP-001_Competency_Model_and_Behavioral_Anchors.md) | Competency Model and Behavioral Anchors | Governance Pillar Leader (Policy & Standards) | Approved |

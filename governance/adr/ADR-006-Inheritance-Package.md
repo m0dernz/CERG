@@ -1,3 +1,15 @@
+| | |
+|---|---|
+| **Document ID** | CERG-GOV-ADR-006 |
+| **Version** | 1.0 |
+| **Status** | Approved |
+| **Classification** | Public |
+| **Owner** | Governance Pillar Leader |
+| **Review Cycle** | Annual |
+| **Frameworks** | N/A (reference record) |
+| **Regulations** | Cross-cutting |
+| **Environments** | All CERG-managed documentation |
+
 # ADR-006: Inheritance Evidence Package
 
 | Field | Value |

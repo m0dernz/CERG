@@ -1,3 +1,15 @@
+| | |
+|---|---|
+| **Document ID** | CERG-GOV-ADR-005 |
+| **Version** | 1.0 |
+| **Status** | Approved |
+| **Classification** | Public |
+| **Owner** | Governance Pillar Leader |
+| **Review Cycle** | Annual |
+| **Frameworks** | N/A (reference record) |
+| **Regulations** | Cross-cutting |
+| **Environments** | All CERG-managed documentation |
+
 # ADR-005: Evidence Tiers (E1/E2/E3)
 
 | Field | Value |
