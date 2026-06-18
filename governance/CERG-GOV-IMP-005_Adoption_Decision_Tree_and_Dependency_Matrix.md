@@ -8,7 +8,7 @@
 | | |
 |---|---|
 | **Document ID** | CERG-GOV-IMP-005 |
-| **Version** | 1.03 |
+| **Version** | 1.02 |
 | **Status** | Approved |
 | **Classification** | Public |
 | **Owner** | Governance Pillar Leader |
@@ -298,7 +298,7 @@ Exit criteria:
 | | |
 |---|---|
 | **Document ID** | CERG-GOV-IMP-005 |
-| **Version** | 1.03 |
+| **Version** | 1.02 |
 | **Status** | Approved |
 | **Approved By** | CISO |
 | **Owner** | Governance Pillar Leader |
@@ -308,7 +308,6 @@ Exit criteria:
 
 | **Version** | **Date** | **Author** | **Change** |
 |---|---|---|---|
-| 1.03 | 2026-06-17 | Governance Pillar Leader | Added measurable Gate 2 to Gate 3 transition criteria so MVC adoption must demonstrate operating cadence before broad standard-layer adoption. |
 | 1.02 | 2026-06-17 | Governance Pillar Leader | Added AI operational templates and registers to adoption selector, dependency matrix, and default labels. |
 | 1.01 | 2026-06-14 | Governance Pillar Leader | Aligned Lite path sizing and core-standard labels with README, START-HERE, IMP-001, and IMP-003. |
 | 1.0 | 2026-06-13 | Governance Pillar Leader | Initial publication. Adds adoption decision tree, safe tailoring rules, dependency matrix, artifact labels, and adoption gates. |

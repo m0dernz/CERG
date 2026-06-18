@@ -48,7 +48,7 @@
   title: Document Catalog and Naming Convention
   document_type: governance_instrument
   domain: CAT
-  version: 1.40
+  version: 1.38
   status: Approved
   classification: Public
   publication_profile: public
@@ -57,7 +57,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: governance/CERG-GOV-CAT-001_Document_Catalog_and_Naming_Convention.md
   source_file: CERG-GOV-CAT-001_Document_Catalog_and_Naming_Convention.md
-  source_hash: 14f49226f37a853772da832a64951ded3d621dee435fee058f28a833b21c1681
+  source_hash: ade7b03b24ce4fd6ad6cfd00897cbfe57a8104077d420f4fdf07fc10d6eebbea
   canonical_url: https://github.com/m0dernz/CERG/blob/main/governance/CERG-GOV-CAT-001_Document_Catalog_and_Naming_Convention.md
   llm_include: true
   llm_priority: high
@@ -368,7 +368,7 @@
   title: Adoption Decision Tree and Dependency Matrix
   document_type: governance_instrument
   domain: IMP
-  version: 1.03
+  version: 1.02
   status: Approved
   classification: Public
   publication_profile: public
@@ -377,7 +377,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: governance/CERG-GOV-IMP-005_Adoption_Decision_Tree_and_Dependency_Matrix.md
   source_file: CERG-GOV-IMP-005_Adoption_Decision_Tree_and_Dependency_Matrix.md
-  source_hash: 7c833f7a85ca3876112751bc9b92d4fcd7d52d417fdaabd69d5d9b3e9bb15372
+  source_hash: 06f1657d5cedb46be2cb860db324a2e169cd6d92dca695a2a8b03e12cbb7f445
   canonical_url: https://github.com/m0dernz/CERG/blob/main/governance/CERG-GOV-IMP-005_Adoption_Decision_Tree_and_Dependency_Matrix.md
   llm_include: true
   llm_priority: medium

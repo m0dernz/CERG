@@ -9,7 +9,7 @@
 | | |
 |---|---|
 | **Document ID** | CERG-GOV-CAT-001 |
-| **Version** | 1.40 |
+| **Version** | 1.38 |
 | **Status** | Approved |
 | **Classification** | Public |
 | **Owner** | Governance Pillar Leader (Document Control) |
@@ -505,7 +505,7 @@ No F2-F4 governance instruments remain planned. The Annual Security and Governan
 | Field | Value |
 |---|---|
 | **Document ID** | CERG-GOV-CAT-001 |
-| **Version** | 1.40 |
+| **Version** | 1.38 |
 | **Status** | Approved |
 | **Effective Date** | 2026-06-17 |
 | **Classification** | Public |
@@ -522,8 +522,6 @@ No F2-F4 governance instruments remain planned. The Annual Security and Governan
 
 | **Version** | **Date** | **Author** | **Change Summary** |
 |---|---|---|---|
-| 1.40 | 2026-06-17 | Governance Pillar Leader | Reconciled concurrent catalog revision history and updated the next scheduled review date after AI and SaaS/SBOM additions. |
-| 1.39 | 2026-06-17 | Governance Pillar Leader | Removed the hardcoded machine-readable manifest artifact count so the catalog does not drift when templates are added. |
 | 1.38 | 2026-06-17 | Governance Pillar Leader | Registered CERG-TMPL-AI-003 as the AI system and model register template. |
 | 1.37 | 2026-06-17 | Governance Pillar Leader | Registered CERG-TMPL-AI-002 as the sanctioned AI tools register template. |
 | 1.36 | 2026-06-17 | Governance Pillar Leader | Registered CERG-TMPL-AI-001 as the standalone AI intake and sanctioning template. |
