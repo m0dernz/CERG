@@ -53,6 +53,10 @@ Use this document when:
 
 The CERG spine is the minimum chain that turns security intent into operating work.
 
+> **Architecture Decision Records (ADRs)**
+>
+> Key architectural decisions — three pillars, NIST spine, overlay model, evidence tiers, inheritance package — are documented in [`/governance/adr/`](../governance/adr/). Each ADR captures the context, alternatives considered, decision rationale, and consequences. New CERG contributors and maintainers should review these before proposing structural changes.
+
 ```text
 Cybersecurity Policy
   -> CERG Framework
