@@ -42,6 +42,15 @@
 
 ## 1. Purpose and Scope
 
+This standard defines security requirements for AI systems, AI-enabled SaaS, and built AI features within the CERG operating model.
+
+**Integration points.** This standard does not stand alone. AI risk is managed through the following cross-references:
+- **Vendor risk** — AI-enabled SaaS and AI vendor assessments follow PRC-TPRM-001, supplemented by AI-specific assessment criteria in this standard.
+- **Threat modeling** — AI-specific threats (prompt injection, model extraction, data poisoning, excessive agency) are modeled using PRC-TM-001 with the AI abuse case categories in PRC-TM-001 §5.6.1.
+- **Detection** — AI-specific detection rules (model behavior anomalies, prompt injection patterns, data exfiltration via model API) are defined in STD-LM-001 and referenced from the control overlay in CB-001 §8.
+- **Evidence** — Model cards, training data provenance, and AI-specific controls are evidenced per CB-001 §4.1 evidence tier requirements.
+
+The AI Overlay in CB-001 §8 defines which baseline controls are tightened or augmented for AI scope.
 Artificial intelligence entered the organization faster than any technology before it, and it entered mostly without asking. Employees use AI assistants. Vendors embed AI features into software already in use. Teams build applications on top of AI models. Each of these creates security exposure that none of the existing CERG standards squarely owns: data leaving the organization in a prompt, decisions made by a model no one validated, an application vulnerable to attacks that did not exist three years ago.
 
 This standard establishes the requirements for the secure use of AI across CERG-managed environments: acceptable use, how data and AI interact, the security of in-house and embedded AI systems, the AI-specific threats the program must defend against, the assessment of third-party AI services, and the control of unsanctioned AI use.
