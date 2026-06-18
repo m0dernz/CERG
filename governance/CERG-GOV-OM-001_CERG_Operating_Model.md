@@ -367,6 +367,23 @@ Several roles intentionally sit between pillars and rotate:
 - **Incident Response support rotation.** CERG provides Engineering, Risk, and Governance support when activated by the standing IR team; the Incident Commander owns incident decisions and IR on-call operations.
 - **Audit liaison.** Governance-led with Engineering and Risk SMEs.
 
+### 6.6 Rotation Program Specification
+
+The rotation roles above require structured mechanics to function safely.
+
+| Parameter | Specification |
+|-----------|-------------|
+| **Term length** | 6 months, renewable once by mutual agreement |
+| **Prerequisites** | Shadow the role for at least 2 cycles before assuming primary rotation duty |
+| **Handoff** | 1-week overlap between outgoing and incoming rotation holder; handoff checklist (access, calendar, pending reviews, known issues) completed |
+| **Capacity allocation** | 20% of the rotation holder's weekly working time reserved for rotation duties. The rotation holder's primary pillar leader adjusts workload accordingly |
+| **Performance evaluation** | Separate from primary role evaluation. Rotation evaluation focuses on: responsiveness, quality of handoffs, cross-pillar collaboration. Evaluated by the receiving pillar leader |
+| **Return-to-primary** | At rotation end, the holder returns to full-time primary role duties. Knowledge transfer documentation is captured in the evidence library |
+| **Training** | Standard operating procedures for the rotation role maintained by the owning pillar; reviewed at rotation start |
+| **Escalation** | If the rotation holder is overwhelmed, the owning pillar leader assigns a backup. If the backup is unavailable, the primary pillar leader performs the rotation duty for that cycle |
+
+Rotation assignments are recorded in the personnel system and in the Role Assignment Map (IMP-001). The CISO reviews rotation coverage quarterly during the Leadership Sync.
+
 ---
 
 ## 7. Coordination Cadence
