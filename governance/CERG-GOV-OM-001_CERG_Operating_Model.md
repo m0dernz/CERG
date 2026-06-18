@@ -318,7 +318,7 @@ Roles are organized by pillar. Sub-role variants (e.g., Engineering Pillar Leade
 
 > **"CISO designee"**
 >
-> Several subordinate documents reference a "CISO designee" as an approval authority for tactical risk decisions. The CISO designee is whichever named pillar leader (Engineering, Risk, or Governance) the CISO has formally delegated to act on the CISO's behalf for a specific approval class. Designation is recorded in writing and reviewed at the CISO's discretion at least annually. Where a document needs to name a specific approver, use the canonical role name (e.g., "Risk Pillar Leader"); reserve "CISO designee" for cases where the delegation may rotate between pillars.
+> Several subordinate documents reference a "CISO designee" as an approval authority for tactical risk decisions. The CISO designee is whichever named pillar leader (Engineering, Risk, or Governance) the CISO has formally delegated to act on the CISO's behalf for a specific approval class. Designation is recorded as a **Delegation Record** per [CERG-GOV-FLOW-001 §4](CERG-GOV-FLOW-001_Cross-Pillar_Operational_Flows.md) (Authoritative Record Types) and reviewed at the CISO's discretion at least annually. The Delegation Record captures the principal role, delegate role, delegated authorities, effective date, and expiry date. Where a document needs to name a specific approver, use the canonical role name (e.g., "Risk Pillar Leader"); reserve "CISO designee" for cases where the delegation may rotate between pillars.
 
 ### 6.2 Cyber Engineering: Typical Roles
 
