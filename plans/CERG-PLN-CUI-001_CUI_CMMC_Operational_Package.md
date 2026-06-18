@@ -382,7 +382,7 @@ Interviews simulate C3PAO assessor interaction with key personnel.
 | Assessor | Same Lead Assessor (or equivalent independence) |
 | Method | Full evidence re-inspection + targeted interviews on changed practices |
 | Outcome | Updated findings report; remaining NOT MET practices are either remediated with evidence or escalated to CISO for risk acceptance decision |
-| Go/No-Go Decision | CISO, Governance Pillar Leader, and CMMC / Federal Compliance Manager decide based on re-test results: proceed to C3PAO assessment, delay (with contract impact assessment), or proceed with known gaps documented
+| Go/No-Go Decision | CISO, Governance Pillar Leader, and CMMC / Federal Compliance Manager decide based on re-test results: proceed to C3PAO assessment, delay (with contract impact assessment), or proceed with known gaps documented |
 
 ---
 

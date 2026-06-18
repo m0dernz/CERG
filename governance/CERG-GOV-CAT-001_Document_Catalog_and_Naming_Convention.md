@@ -396,6 +396,7 @@ The V1 library is the set below. Every artifact listed has either an approved or
 | [`CERG-GOV-EDG-001`](CERG-GOV-EDG-001_Edge_Register.md) | Edge Register | Governance Pillar Leader / Vendor Risk Analyst | Approved |
 | [`CERG-GOV-CJ-001`](CERG-GOV-CJ-001_Crown_Jewel_Register_and_Scenario_Library.md) | Crown Jewel Register and Loss Scenario Library | Risk Pillar Leader / Governance Pillar Leader | Approved |
 | [`CERG-GOV-SLC-001`](CERG-GOV-SLC-001_CERG_Service_Level_Commitments.md) | CERG Service-Level Commitments | CISO | Approved |
+| [`CERG-GOV-CAL-002`](CERG-GOV-CAL-002_Calibration_Checklist.md) | Calibration Checklist | Governance Pillar Leader | Approved |
 
 ### 5.3 Standards
 

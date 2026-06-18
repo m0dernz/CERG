@@ -252,6 +252,41 @@ Exceptional candidates with extraordinary demonstrated capability may be conside
 
 ---
 
+### 7.5 Promotion Panel Composition
+
+Every promotion case is reviewed by a cross-pillar promotion panel that ensures fairness, consistency, and breadth of perspective.
+
+| **Panel Role** | **Who** | **Purpose** |
+|---|---|---|
+| **Panel Chair** | Pillar leader of the candidate's pillar | Chairs the session; ensures process fairness; presents the promotion case |
+| **Cross-Pillar Reviewer** | A pillar leader from a different pillar than the candidate's | Provides independent perspective on cross-pillar competency and organizational impact |
+| **Subject Matter Expert** | A senior practitioner (S3+) in the candidate's discipline, from any pillar | Assesses craft-mastery evidence against the target grade's CMP-001 behavioral anchors |
+| **HR Business Partner** | HR representative | Ensures process compliance, equity, and documentation standards |
+| **CISO** | Chief Information Security Officer | Final approval authority; attends or receives written recommendation for decisions at S3+ |
+
+The panel must include at least three voting members. The cross-pillar reviewer and the SME must not be the same person. No panel member may evaluate a candidate they directly manage (to prevent conflict of interest), except the panel chair whose role is to present, not to evaluate in isolation.
+
+### 7.6 Promotion Timeline and Communication
+
+The promotion cycle follows a defined calendar aligned to the performance management cadence:
+
+| **Date** | **Activity** | **Owner** |
+|---|---|---|
+| 6 weeks before calibration | Manager initiates promotion case; begins evidence collection | Manager |
+| 4 weeks before calibration | Cross-pillar input solicited and received | Manager |
+| 2 weeks before calibration | Promotion case document finalized; submitted to panel chair | Manager |
+| Calibration session (per §6) | Promotion case presented and evaluated at calibration | Panel Chair |
+| Within 1 week of calibration | CISO approves or defers; written rationale provided for deferrals | CISO |
+| Within 2 weeks of approval | Promotion announced to candidate; new grade effective date set | Manager + HR |
+| Within 1 week of announcement | Team/squad notified by manager; broader team notified by pillar leader | Manager / Pillar Leader |
+
+**Communication principles:**
+
+1. **The candidate hears first, before any other team member.** No one learns of a promotion from a colleague before the candidate hears it from their manager.
+2. **Deferred promotions include a development plan.** A deferral is not a denial. It identifies specific competency gaps and the timeline and resources to close them. The candidate and manager agree on a development plan within 2 weeks of the deferral.
+3. **Communicated promotions are celebrated.** The promotion is announced at the next CERG All-Hands or pillar meeting. The announcement includes what the candidate accomplished to earn the promotion, reinforcing the standard for others.
+4. **External communication is coordinated.** If the promotion is part of a broader organizational announcement (e.g., pillar leader hire), coordinate with HR and Communications per organizational policy.
+
 ## 8. Performance Improvement Process
 
 A "Below Expectations" rating triggers the performance improvement process. This is not punitive; it is a structured attempt to close the gap. It is also a documentation trail that supports a separation decision if the gap does not close.

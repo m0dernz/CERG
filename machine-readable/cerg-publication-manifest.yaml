@@ -417,7 +417,7 @@
   public_summary_allowed: true
   full_text_public_allowed: true
   redaction_required: false
-  approved_public_release_by: 'Governance Pillar Leader (Policy & Standards)'
+  approved_public_release_by: Governance Pillar Leader
   release_date: 2026-06-18
 
 - document_id: CERG-GOV-VAR-001
@@ -626,7 +626,7 @@
   public_summary_allowed: true
   full_text_public_allowed: true
   redaction_required: false
-  approved_public_release_by: Risk Pillar Leader
+  approved_public_release_by: Governance Pillar Leader
   release_date: 2026-06-18
 
 - document_id: CERG-PRC-TM-001
