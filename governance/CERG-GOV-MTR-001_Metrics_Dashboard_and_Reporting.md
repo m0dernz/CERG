@@ -175,6 +175,9 @@ Knowledge "in the system" means knowledge that survives when the person who hold
 | KM-001 | Procedure Documentation Currency | % of critical processes with current (<= 12 month) procedure documentation. "Critical" means the procedure supports a control marked Implemented in CB-001. | Document Catalog + procedure review dates | Quarterly | >= 95% / 85-95% / < 85% | CISO Dashboard |
 | KM-002 | Role Backup Currency | % of canonical roles (OM-001 Section 6.1) with a documented secondary or backup who has performed the role in an exercise or real event within 18 months | Cross-training log | Annual | >= 90% / 75-90% / < 75% | COG Brief |
 | KM-003 | Cross-Training Hours per Team Member | Mean cross-pillar knowledge activity hours per CERG team member per quarter. Target: >= 4 hours per quarter (OM-001 Section 10.4). | Cross-training log | Quarterly | >= 4.0 / 2.0-4.0 / < 2.0 | CISO Dashboard |
+| KM-004 | Knowledge Resilience Tabletop | % of quarterly tabletops where backup executed critical process without assistance. Pass = all steps without prompting. Partial = completed with prompting. Fail = could not execute. | Tabletop exercise record | Quarterly | >= 90% Pass / 75-90% / < 75% Pass | CISO Dashboard / COG Brief |
+
+> KM-004 is weighted higher than KM-003 in overall knowledge management scoring (Section 9). A team scoring high on KM-003 but low on KM-004 is spending training hours without evidence of transferable knowledge.
 
 ### 3.9 CERG Service Responsiveness Metrics (Owner: CISO / Pillar Leaders)
 
