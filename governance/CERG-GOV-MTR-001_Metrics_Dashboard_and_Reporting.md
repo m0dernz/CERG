@@ -422,8 +422,9 @@ Thresholds are reviewed:
 ### 10.3 Calibration Rules
 
 1. **Tighten, do not loosen without cause.** The default direction is tighter. A threshold is only loosened when: the metric was set unrealistically and cannot be met after documented good-faith effort, or risk appetite explicitly relaxes in the domain.
-2. **One change at a time.** When multiple calibration triggers fire simultaneously, change one threshold per domain per quarter. Changing multiple thresholds simultaneously makes it impossible to determine which change drove which outcome.
-3. **Communicate before enforcing.** When a threshold changes, the affected metric owners and the CISO are notified before the new threshold takes effect. The next reporting period shows both the old and new threshold for transition.
+2. **Scope change trigger for loosening.** A significant reduction in organizational scope may warrant threshold review: asset count decrease >20% (organic or divestiture), team size reduction >25%, or regulatory scope removal. When triggered, the owning pillar leader reviews all affected thresholds for appropriateness and documents any changes with CISO + Finance approval. Record all threshold changes, including scope-triggered loosening, in the threshold change log.
+3. **One change at a time.** When multiple calibration triggers fire simultaneously, change one threshold per domain per quarter. Changing multiple thresholds simultaneously makes it impossible to determine which change drove which outcome.
+4. **Communicate before enforcing.** When a threshold changes, the affected metric owners and the CISO are notified before the new threshold takes effect. The next reporting period shows both the old and new threshold for transition.
 
 ### 10.4 Threshold Change Log
 
