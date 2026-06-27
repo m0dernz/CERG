@@ -17,7 +17,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: governance/CERG-GOV-ANTI-001_CERG_Anti_Pattern_Catalog.md
   source_file: CERG-GOV-ANTI-001_CERG_Anti_Pattern_Catalog.md
-  source_hash: 6d0303c6f1ffb3baad0faa6ce11466c383c20a6893b8e56dca12cbed29c70e1d
+  source_hash: 964bed036b9d8a192f69fc280906bfc76186ba28b44b76408c7f0cc5e6c88cc9
   canonical_url: https://github.com/m0dernz/CERG/blob/main/governance/CERG-GOV-ANTI-001_CERG_Anti_Pattern_Catalog.md
   llm_include: true
   llm_priority: medium
