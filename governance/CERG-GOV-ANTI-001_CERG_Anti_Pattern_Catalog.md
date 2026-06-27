@@ -34,25 +34,25 @@
 
 ## 1. Purpose and Scope
 
-CERG is easier to adopt when failure modes are explicit. A good operating model does not only say what right looks like; it also names the patterns that make programs look mature while leaving capability weak, ownership unclear, or evidence unusable.
+CERG is more than a rulebook. It is a contract between leadership and the people who actually run the program. This catalog exists because most programs do not fail from missing policies. They fail from pretending the policies are already true.
 
-This catalog collects common CERG anti-patterns across adoption, workforce design, capability development, evidence management, and compliance alignment. It is a teaching artifact and a diagnostic aid. It does not replace the detailed guidance in the source documents; it points adopters to the corrective action and the governing artifact.
+This catalog collects the failure modes that show up again and again across adoption, workforce design, capability building, evidence management, and compliance. It is blunt by design. It is meant to be read by CISOs, pillar leads, and engineers who want to know what is actually broken instead of what the status deck says is working. It does not replace detailed guidance in the source documents; those documents explain what right looks like. This document explains what right looks like when nobody is watching and the metrics still look green.
 
 An anti-pattern is included when it meets three tests:
 
-1. It is common enough that adopters are likely to encounter it.
+1. It is common enough that adopters will almost certainly encounter it.
 2. It creates operational risk, governance confusion, or false confidence.
-3. It has a practical correction available inside CERG.
+3. It has a practical correction already available inside CERG.
 
 ---
 
 ## 2. How to Use This Catalog
 
-Use this catalog during implementation planning, quarterly program review, lessons learned, and maturity assessment.
+Use this catalog during implementation planning, quarterly program review, red-team walkthroughs, incident post-mortems, and maturity assessment.
 
-- **Adopters** use it to avoid common failure modes before they become embedded.
+- **Adopters** use it to surface dysfunction before it becomes embedded.
 - **CISOs and pillar leaders** use it to challenge optimistic status reporting.
-- **Governance teams** use it to convert recurring failure modes into improvement items.
+- **Governance teams** use it to convert recurring failure modes into improvement items with owners and dates.
 - **Auditors and assessors** use it to understand where CERG expects evidence, ownership, and validation.
 - **Contributors** use it to identify gaps in the framework itself; if a repeated anti-pattern has no corrective guidance, the corpus needs improvement.
 
@@ -172,7 +172,38 @@ The catalog is intentionally blunt. The goal is not to shame teams. The goal is 
 
 **Corrective action:** Pair every policy requirement with operating evidence: review record, log export, ticket, register update, test result, or approval record. Use policy as design evidence, not operating evidence.
 
-### 6.4 ANTI-COMP-001 — Control Mapping as Control Operation
+### 6.4 ANTI-CAP-005 — Measurement Theater
+
+**What it looks like:** The program produces frameworks full of KPIs, KRIs, and coverage percentages, yet no metric changes a decision, triggers an escalation, or changes a budget line. Dashboards are reviewed; nothing acts on them.
+
+**Why it fails:** Measurement without decision rules is observation, not management. A metric that cannot change behavior is decorative. This anti-pattern often appears alongside ANTI-CAP-003, but is worse: the dashboard exists, the conversation exists, and still nothing moves.
+
+**Corrective action:** Every metric must have an explicit decision rule and owner: "If X crosses Y, then owner Z must do A by date B." If a metric has no such rule, remove it from reporting or convert it into an action.
+
+### 6.5 ANTI-CAP-006 — Detection as a Rule Count
+
+**What it looks like:** The program claims detection maturity by counting Sigma rules, analytics, or detection coverage percentages without demonstrating alert triage, owner assignment, SLA compliance, or false-positive reduction.
+
+**Why it fails:** Rule count is an input, not a capability. An analyst drowning in noise with no triage path, no coverage validation, and no test cadence does not have detection capability no matter how many rules exist.
+
+**Corrective action:** Measure detection by outcome: alert-to-triage time, triage-to-closure time, false-positive rate by rule family, and coverage validated by red-team exercise. Count rules as a development metric, not a maturity metric.
+
+### 6.6 ANTI-CAP-007 — Detection by Anonymous Hero
+
+**What it looks like:** Detection rules, hunts, and triage decisions originate primarily from one individual rather than from documented procedures, playbooks, hunt cycles, and peer-reviewed analytics.
+
+**Why it fails:** The capability is embedded in a person, not in the program. When that person is unavailable, the organization cannot defend itself. This pattern is the detection-engineering version of ANTI-WF-001.
+
+**Corrective action:** Move detection logic into version-controlled rule sets, documented hunt hypotheses, peer review gates, and owned detection services. Every rule should have an owner, a maintenance date, and a test record.
+
+### 6.7 ANTI-EVID-004 — False-Positive Management Theater
+
+**What it looks like:** Alert tuning focuses on suppressing alerts to improve mean-time-to-detect or alert volume metrics, rather than improving signal quality. Tuning decisions are undocumented, ownership is unclear, and the resulting "clean" dashboards hide real gaps in coverage.
+
+**Why it fails:** Suppressing alerts without documenting the decision, the rationale, and the residual risk is evidence that the tuning process is operating, not that detection is effective. It may satisfy a metric but breaks the program when the first novel attack bypasses the blind spot.
+
+**Corrective action:** Tuning must produce evidence: the rule delta, the rationale, the risk acceptance if applicable, the owner approval, and the impact on coverage. Track blind-spot risks created by suppression explicitly.
+### 6.8 ANTI-COMP-001 — Control Mapping as Control Operation
 
 **What it looks like:** A control is mapped to NIST, CMMC, NERC-CIP, SOX, or ISO and is therefore treated as mature.
 
@@ -180,7 +211,7 @@ The catalog is intentionally blunt. The goal is not to shame teams. The goal is 
 
 **Corrective action:** Treat mapping as the start of the evidence chain. A mapped control still needs owner, implementation path, operating record, evidence quality, and validation.
 
-### 6.5 ANTI-COMP-002 — POA&M as Permission Slip
+### 6.9 ANTI-COMP-002 — POA&M as Permission Slip
 
 **What it looks like:** Every gap becomes a POA&M item, but the item has no credible owner, funding, schedule, dependency plan, or evidence of progress.
 
@@ -188,7 +219,7 @@ The catalog is intentionally blunt. The goal is not to shame teams. The goal is 
 
 **Corrective action:** Every POA&M item must have an owner, target date, funding or capacity path, interim risk treatment, and progress evidence. Stale POA&M items must promote to risk or executive escalation.
 
-### 6.6 ANTI-COMP-003 — Regulation-First Operating Model
+### 6.10 ANTI-COMP-003 — Regulation-First Operating Model
 
 **What it looks like:** Separate teams, evidence stores, calendars, and status reports are built for each framework: one for CMMC, one for SOX, one for NERC-CIP, one for ISO.
 
