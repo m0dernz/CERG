@@ -6,7 +6,7 @@
 | | |
 |---|---|
 | **Document ID** | CERG-STD-AC-001 |
-| **Version** | 1.21 |
+| **Version** | 1.23 |
 | **Status** | Approved |
 | **Classification** | Public |
 | **Owner** | Governance Pillar Leader |
@@ -21,7 +21,7 @@
 ## Table of Contents
 
 1. [Purpose and Scope](#1-purpose-and-scope)
-2. [CERG Roles in Access Management](#2-cerg-roles-in-access-management)
+2. [Identity Accountability and Operating Models](#2-identity-accountability-and-operating-models)
 3. [Identity Foundation](#3-identity-foundation)
 4. [Authentication](#4-authentication)
 5. [Authorization](#5-authorization)
@@ -30,9 +30,10 @@
 8. [Identity Lifecycle (Joiner / Mover / Leaver)](#8-identity-lifecycle-joiner--mover--leaver)
 9. [Access Review and Recertification](#9-access-review-and-recertification)
 10. [Monitoring, Logging, and Detection](#10-monitoring-logging-and-detection)
-11. [Regulatory and Framework Alignment Summary](#11-regulatory-and-framework-alignment-summary)
-12. [Exceptions and Escalation](#12-exceptions-and-escalation)
-13. [Document Control](#13-document-control)
+11. [Non-Human Identity and Identity Threat Detection](#11-non-human-identity-and-identity-threat-detection)
+12. [Regulatory and Framework Alignment Summary](#12-regulatory-and-framework-alignment-summary)
+13. [Exceptions and Escalation](#13-exceptions-and-escalation)
+14. [Document Control](#14-document-control)
 
 ---
 
@@ -62,17 +63,50 @@ This standard is subordinate to **[CERG-POL-001](../governance/CERG-POL-001_Cybe
 
 ---
 
-## 2. CERG Roles in Access Management
+## 2. Identity Accountability and Operating Models
 
-| **CERG Pillar** | **Access Management Responsibilities** |
+Identity may be operated by CERG, by an enterprise IAM / IT team, by a platform team, by an MSP, or by a combination of those functions. This standard does not assume that CERG directly runs IAM. It defines the control outcomes, evidence expectations, exception rules, and assurance responsibilities that must exist regardless of who operates the identity stack.
+
+When this standard uses the **Owner** column in later sections, the owner is the accountable control or assurance role, not always the hands-on operator. If IAM operations sit outside CERG, the operating team implements the requirement and CERG validates evidence, records divergence, and escalates residual risk.
+
+### 2.1 Operating Models
+
+| **Model** | **Typical Operator** | **CERG Accountability** | **Required Evidence** |
+|---|---|---|---|
+| **CERG-operated IAM** | CERG Engineering / Identity Engineering | CERG owns design, operation, monitoring integration, exceptions, and evidence. | IdP/PAM/IGA configuration exports, change records, access-review packages, detection coverage. |
+| **Enterprise IT-operated IAM** | IT / Infrastructure / End-user services | CERG defines security requirements, reviews material identity changes, validates evidence, and tracks exceptions. | IAM service agreement, control mapping, current configuration exports, recertification results, exception register. |
+| **MSP / external operator IAM** | Managed service provider or contracted operator | CERG and TPRM define contractual controls, kill-switch expectations, logging requirements, evidence cadence, and escalation paths. | Contract clauses, shared responsibility matrix, operator access roster, privileged-session logs, offboarding / kill-switch test. |
+| **SaaS / cloud-inherited IAM** | SaaS provider, cloud provider, or platform owner | CERG validates customer-side configuration, provider attestation, integration scope, and tenant-level monitoring. | Inheritance Evidence Package per [`CERG-GOV-CB-001`](../governance/CERG-GOV-CB-001_Unified_Control_Baseline.md) §5 plus tenant configuration evidence. |
+
+### 2.2 Responsibility Model
+
+| **Function / Role** | **Access Management Responsibilities** |
 |---|---|
-| **Engineering** | Designs, implements, and maintains identity platforms - IdP, directory, MFA, SSO, federation, PAM, secrets management, and certificate authorities. Builds joiner / mover / leaver automations. Maintains identity-related infrastructure-as-code, conditional access policies, and platform-level access controls. |
-| **Risk** | Operates continuous identity threat detection (UEBA, identity provider risk signals, privileged session monitoring). Conducts identity-focused adversarial testing. Maintains the identity-risk view in the risk register: stale accounts, excessive privileges, MFA bypass paths, dormant service accounts. |
-| **Governance** | Owns this standard and all access management procedures. Operates the access review and recertification program. Maintains role definitions, segregation-of-duties (SoD) policies, and approval matrices. Produces access-control evidence for [SOX](https://www.govinfo.gov/app/details/PLAW-107publ204), NERC-CIP, [CMMC](https://dodcio.defense.gov/CMMC/), and other regulatory regimes. Coordinates access-related findings during audits. |
+| **IAM Operator** | Performs day-to-day identity operations: IdP, directory, MFA, SSO, federation, PAM, IGA, secrets, certificates, and access workflows. May be CERG, IT, platform engineering, or MSP. |
+| **Cyber Engineering / Identity Engineering** | Defines technical identity requirements, reviews identity architecture, validates conditional access / PAM / secrets designs, and ensures identity controls integrate with systems, cloud, SaaS, OT, and automation. |
+| **Cyber Risk** | Operates or validates continuous identity threat detection (UEBA, IdP risk signals, privileged session monitoring, OAuth / token anomalies). Conducts identity-focused adversarial testing. Maintains the identity-risk view: stale accounts, excessive privileges, MFA bypass paths, dormant service accounts, and weak federation paths. |
+| **Cyber Governance** | Owns this standard and the evidence expectations. Oversees access review and recertification requirements, role definitions, segregation-of-duties (SoD) policies, approval matrices, exception handling, and audit evidence for [SOX](https://www.govinfo.gov/app/details/PLAW-107publ204), NERC-CIP, [CMMC](https://dodcio.defense.gov/CMMC/), and other regimes. |
+| **System / Data Owner** | Approves business access, defines role intent, validates least privilege, and confirms access removal or modification during recertification. |
+| **TPRM / Vendor Risk** | Ensures third-party identity operators, SaaS providers, MSPs, and vendors meet contractual access, logging, notification, evidence, and offboarding requirements. |
+| **Incident Response Team** | Commands identity-related incidents. CERG supplies identity context, containment options, evidence, and post-incident control improvements. |
 
 > **The "Every Door, Every Time" Standard**
 >
-> Strong access control is not selective. An MFA prompt that can be bypassed once, through legacy protocols, an unmanaged endpoint, or an exception with no expiration, is not a strong control; it is a control with a documented bypass. CERG measures access maturity by the absence of exceptions, not by the strength of the primary path.
+> Strong access control is not selective. An MFA prompt that can be bypassed once, through legacy protocols, an unmanaged endpoint, a stale OAuth grant, a vendor admin path, or an exception with no expiration, is not a strong control; it is a control with a documented bypass. CERG measures access maturity by the absence of unmanaged bypasses, not by the strength of the primary path.
+
+### 2.3 Minimum Identity Assurance Package
+
+Every environment or service that implements identity controls shall maintain an assurance package sufficient for CERG, audit, or incident responders to understand who can authenticate, what they can reach, and how access can be revoked. At minimum, the package includes:
+
+1. **Identity architecture:** authoritative source, IdP / federation path, MFA method, PAM / JIT path, and local-account exceptions.
+2. **Access population:** users, administrators, external identities, service principals / NHIs, privileged groups, and break-glass accounts.
+3. **Control configuration:** conditional access, MFA, session lifetime, device posture, OAuth / app-consent restrictions, PAM policy, and logging settings.
+4. **Review evidence:** latest access review, privileged access review, NHI review, vendor access review, and unresolved exceptions.
+5. **Detection and response hooks:** identity log sources, detections enabled, session revocation path, emergency disable path, and identity incident contacts.
+6. **Operating boundary:** whether IAM is operated by CERG, IT, MSP, SaaS provider, or shared model, with named accountable owner and escalation path.
+7. **Accuracy check:** evidence that the package has been sampled against reality, not merely completed. At minimum, validate that the described identity architecture exists, named controls are configured, populations match authoritative exports, and evidence can be reperformed.
+
+A complete package that does not match the environment is not current; it is false assurance. Package accuracy is sampled as a control-effectiveness activity and reported through [`CERG-GOV-MTR-001`](../governance/CERG-GOV-MTR-001_Metrics_Dashboard_and_Reporting.md) identity metrics.
 
 ---
 
@@ -107,6 +141,19 @@ The organization recognizes the following identity classes. Controls in this sta
 | **Vendor / Third-Party** | Identities belonging to external organizations with access to organizational systems. | Federation or sponsored accounts, scope-limited, time-bound, monitored, contractually obligated. |
 | **Break-Glass / Emergency** | Highly privileged identities reserved for emergency access when normal mechanisms are unavailable. | Vaulted credentials, dual control, alarmed use, post-use review, documented procedure. |
 
+### 3.4 Identity Control Plane Scope
+
+Identity control-plane scope includes more than the primary IdP. The following components are in scope for this standard and must be represented in the identity assurance package when present:
+
+- IdP, directory, MFA, SSO, federation, and conditional-access platforms
+- PAM, IGA, secrets managers, certificate authorities, and key-management systems
+- Cloud IAM, SaaS tenant administration, OAuth / OIDC applications, service principals, workload identities, and API integrations
+- CI/CD identity paths, code-signing identities, automation tokens, deploy keys, and agent credentials
+- Remote access gateways, zero-trust access brokers, VPNs, jump servers, OT intermediate systems, and vendor access tooling
+- Break-glass accounts and emergency access procedures for any platform that can materially affect security posture or recovery
+
+A control-plane component not operated by CERG is still in scope. It is handled through the operating model in §2 and through inheritance, shared responsibility, or exception evidence.
+
 ---
 
 ## 4. Authentication
@@ -140,8 +187,9 @@ The organization recognizes the following identity classes. Controls in this sta
 | **Requirement** | **CERG Owner** | **Regulatory Reference** |
 |---|---|---|
 | Enforce session inactivity timeouts and absolute session lifetimes appropriate to the sensitivity of the system. Privileged sessions and Restricted-data systems use shorter limits than general workforce systems. | Engineering | [NIST 800-53](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) AC-11, AC-12 |
-| Bind sessions to device posture where supported. Sessions established on noncompliant devices for sensitive paths shall be terminated automatically. | Engineering | [NIST 800-53](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) AC-12(1), IA-2(12) |
-| Provide session revocation capability for the IdP and for Tier 1 SaaS / cloud control planes. Compromise response shall be able to invalidate sessions globally within minutes. | Engineering / Risk | [NIST 800-53](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) AC-12, IR-4 |
+| Bind sessions to device posture, network context, and risk signals where supported. Sessions established on noncompliant devices or from high-risk contexts for sensitive paths shall be terminated or forced through step-up authentication automatically. | Engineering | [NIST 800-53](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) AC-12(1), IA-2(12) |
+| Provide session and token revocation capability for the IdP and for Tier 1 SaaS / cloud control planes. Compromise response shall be able to invalidate active sessions, refresh tokens, OAuth grants, and app passwords globally within minutes. | Engineering / Risk | [NIST 800-53](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) AC-12, IR-4 |
+| Require re-authentication or step-up authentication before privileged elevation, sensitive data export, MFA factor change, authenticator registration, password reset, OAuth consent approval, or security-policy modification. | Engineering / Governance | [NIST 800-53](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) IA-11, AC-6 |
 
 ---
 
@@ -170,6 +218,7 @@ The organization recognizes the following identity classes. Controls in this sta
 | Access to Restricted-tier data (CUI, PCI, PHI, financially material data) requires explicit authorization by the data owner. Inherited group access is permitted only where the inheriting group has an authorized purpose. | Governance / Engineering | [NIST 800-171](https://csrc.nist.gov/pubs/sp/800/171/r3/final) 3.1.3 · HIPAA 164.308 |
 | Highly destructive functions (mass delete, configuration baseline modification, identity-platform changes) shall require additional authorization controls: dual approval, JIT elevation, or compensating session monitoring. | Engineering | [NIST 800-53](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) AC-6 · [NIST CSF 2.0](https://www.nist.gov/cyberframework) PR.AA |
 | Cross-organizational data sharing (federation, OAuth grants to third-party apps, API integrations) shall be authorized by Engineering and Governance and documented in the third-party integration register. | Engineering / Governance | [NIST 800-53](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) AC-21 · CSA CCM IAM-13 |
+| User-consent to third-party applications shall be disabled or restricted to approved low-risk permissions. Admin consent, high-privilege OAuth scopes, external application integrations, and delegated mailbox / file access require review, owner assignment, logging, and periodic recertification. | Engineering / Governance | [NIST 800-53](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) AC-3, AC-6, AU-2 · CSA CCM IAM-13 |
 
 ---
 
@@ -291,8 +340,6 @@ The following access types shall be treated as privileged and subject to the con
 
 ---
 
----
-
 ## 11. Non-Human Identity and Identity Threat Detection
 
 ### 11.1 Non-Human Identity (NHI) Management
@@ -324,6 +371,7 @@ The following access types shall be treated as privileged and subject to the con
 
 | **Requirement Area** | **[NIST CSF 2.0](https://csrc.nist.gov/pubs/cswp/29/the-nist-cybersecurity-framework-csf-20/final)** | **[NIST 800-53r5](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)** | **[NIST 800-171](https://csrc.nist.gov/pubs/sp/800/171/r3/final)** | **NERC-CIP** | **[CMMC L2](https://dodcio.defense.gov/CMMC/)** | **[SOX](https://www.govinfo.gov/app/details/PLAW-107publ204) ITGC** |
 |---|---|---|---|---|---|---|
+| Identity Operating Model / Assurance Package | GV.RR, PR.AA | PM-9, CA-3, AC-2 | 3.12.4 | CIP-003 / CIP-004 | CA.L2-3.12.4 | Access / Governance |
 | Identity Foundation / SSO | PR.AA | IA-2, IA-8, AC-2 | 3.5.1, 3.5.2 | CIP-004 R4 | IA.L2-3.5.1 | Access |
 | MFA & Authenticator Strength | PR.AA | IA-2(1)(2)(11) | 3.5.3 | CIP-005 R2 | IA.L2-3.5.3 | Access |
 | Credential & Secrets Mgmt | PR.AA | IA-5, IA-5(1)(7) | 3.5.7–3.5.10 | CIP-007 R5 | IA.L2-3.5.7 | Access |
@@ -358,16 +406,18 @@ The following access types shall be treated as privileged and subject to the con
 | | |
 |---|---|
 | **Document ID** | CERG-STD-AC-001 |
-| **Version** | 1.21 |
+| **Version** | 1.23 |
 | **Approved By** | CISO |
 | **Next Review** | Annual / Upon Significant Change |
-| **Change Log** | 1.0 - Initial publication. Identity, authentication, authorization, lifecycle. |
+| **Change Log** | 1.23 - Added identity assurance package accuracy requirement. 1.22 - Added identity operating models, assurance package, expanded control-plane scope, OAuth / token / session requirements, and clarified non-CERG IAM ownership. 1.0 - Initial publication. Identity, authentication, authorization, lifecycle. |
 
 
 ### Revision History
 
 | **Version** | **Date** | **Author** | **Change Summary** |
 |---|---|---|---|
+| 1.23 | 2026-07-03 | CERG Governance | Added assurance package accuracy sampling so package completeness does not mask stale or false evidence. |
+| 1.22 | 2026-07-02 | CERG Governance | Added identity operating models, minimum assurance package, control-plane scope, OAuth / token / session requirements, and clarified CERG assurance role when IAM is operated by IT, MSP, or SaaS providers. |
 | 1.0 DRAFT | 2026 | CERG Governance | Initial release - identity, authentication, authorization, lifecycle |
 
 ### Review Triggers

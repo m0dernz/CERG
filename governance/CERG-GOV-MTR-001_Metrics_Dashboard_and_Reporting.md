@@ -7,7 +7,7 @@
 | | |
 |---|---|
 | **Document ID** | CERG-GOV-MTR-001 |
-| **Version** | 1.32 |
+| **Version** | 1.34 |
 | **Status** | Approved |
 | **Classification** | Public |
 | **Owner** | Governance Pillar Leader (Reporting) |
@@ -124,6 +124,12 @@ Patch hygiene is a maintenance function distinct from exposure reduction. These 
 | ID-002 | Access Recertification Currency | % of in-scope systems with current recert | IGA | Monthly | ≥ 95% / 85–95% / < 85% | CISO Dashboard |
 | ID-003 | Dormant Privileged Accounts | Count of privileged accounts with no use in 60 days | PAM | Weekly | 0 / 1–10 / > 10 | CISO Dashboard |
 | ID-004 | Break-Glass Account Hygiene | % of break-glass accounts within rotation policy | PAM | Monthly | 100% / 90–100% / < 90% | CISO Dashboard |
+| ID-005 | Identity Assurance Package Currency | % of Tier 1 / regulated / critical identity scopes with current assurance package per STD-AC-001 §2.3 | Evidence library + system inventory | Monthly | ≥ 95% / 85–95% / < 85% | CISO Dashboard, COG Brief |
+| ID-006 | External Identity Staleness | Count of vendor, contractor, guest, or federated identities past expiration or inactive >60 days without sponsor attestation | IdP / IGA / TPRM | Weekly | 0 / 1–10 / > 10 | CISO Dashboard |
+| ID-007 | NHI Rotation and Ownership Compliance | % of non-human identities with named owner, approved scope, current review date, and compliant rotation / expiration | NHI registry + secrets manager | Monthly | ≥ 95% / 85–95% / < 85% | CISO Dashboard |
+| ID-008 | Identity Containment Path Documentation | % of Tier 1 IdP, SaaS, cloud, privileged, and vendor identity paths with documented force-sign-out, token revocation, emergency-disable, and owner escalation steps | Identity assurance package + IR playbook | Monthly | 100% / 95–100% / < 95% | CISO Dashboard, COG Brief |
+| ID-009 | Session / Token Containment Test Currency | % of Tier 1 IdP, SaaS, cloud, privileged, and vendor identity paths with tested force-sign-out, token revocation, or emergency-disable path in prior 12 months | IR exercise records + IAM test evidence | Quarterly | ≥ 95% / 80–95% / < 80% | COG Brief |
+| ID-010 | Identity Assurance Package Accuracy | % of sampled identity assurance packages where architecture, populations, configured controls, and review evidence match authoritative source exports | Evidence spot-check + IdP / IGA / PAM / SaaS exports | Quarterly | ≥ 95% / 85–95% / < 85% | COG Brief |
 
 ### 3.5 Third-Party / Supply Chain Metrics (Owner: Cyber Risk: TPRM)
 
@@ -237,7 +243,7 @@ The data source map tells the reporting team where each metric's underlying data
 | EM-001 – EM-010 | Exposure pipeline (scanner, CSPM, SSPM, SCA, KEV, reachability context) | Exposure Management Lead | Hourly API / pipeline export → metrics platform | Source outage: fall back to last-known-good snapshot with timestamp banner. |
 | DT-001 – DT-003 | SIEM + detection coverage tool | Cyber Risk - Detection | Nightly source inventory + detection registry export | Missing source: detection coverage shown as Red. |
 | CM-001 – CM-005 | Configuration / VM / Backup tools | Cyber Engineering - Platforms / Resilience | Nightly aggregation | Backup tool outage: pull from job log; flag as Amber. |
-| ID-001 – ID-004 | IdP / IGA / PAM | Identity Engineer | Nightly export | Source change: re-baseline before publishing. |
+| ID-001 – ID-010 | IdP / IGA / PAM / NHI registry / secrets manager / evidence library / TPRM | Identity Engineer + IAM Operator + Evidence Librarian | Nightly export for operational metrics; monthly evidence-library reconciliation | Source change: re-baseline before publishing; missing package evidence reports Red until reconciled. |
 | TP-001 – TP-004 | TPRM tool | Cyber Risk - TPRM | Daily/weekly export | - |
 || GV-001 – GV-006 | CUI register / OT GRC / SOX program / Document Catalog | Cyber Governance - domain owners | Monthly publish | - |
 || PL-001 – PL-007 | See §3.7 MVP pipelines: CISA KEV feed, vulnerability scanner API, patch management API, CMDB, near-miss log, risk register, TI platform, ATT&CK mapping, PAM/UEBA | Governance Pillar Leader (aggregation) + Risk (data sources) | Daily (PL-001, PL-006); Weekly (PL-002, PL-007); Quarterly (PL-003, PL-004, PL-005) | Source API outage: fall back to manual fallback per §3.7 MVP table; flag as Amber data-quality |
@@ -444,7 +450,7 @@ The guardrails baked into the metric definitions and reporting views above:
 | EM-001 through EM-010 (Exposure Management) | Exposure Management Lead | Daily dashboard update; monthly trend report | CISO, Risk Pillar Leader |
 | DT-001 through DT-003 (Detection) | Detection Engineer | Monthly | Risk Pillar Leader, CISO |
 | CM-001 through CM-005 (Engineering) | Engineering Pillar Leader | Daily for CM-001, CM-004; monthly for others; quarterly for CM-003, CM-005 | CISO, Engineering Pillar Leader |
-| ID-001 through ID-004 (Identity) | Identity Engineer | Daily for ID-001; weekly for ID-003; monthly for ID-002, ID-004 | CISO, Identity Engineer |
+| ID-001 through ID-010 (Identity) | Identity Engineer + IAM Operator | Daily for ID-001; weekly for ID-003 and ID-006; monthly for ID-002, ID-004, ID-005, ID-007, ID-008; quarterly for ID-009 and ID-010 | CISO, Identity Engineer, IAM Operator |
 | TP-001 through TP-004 (Third-Party) | Vendor Risk Analyst | Monthly; quarterly for TP-004 | Risk Pillar Leader, CISO |
 | GV-001 through GV-006 (Governance) | Governance Pillar Leader | Monthly; quarterly for GV-005 | CISO, Governance Pillar Leader |
 || PL-001 – PL-007 (Predictive) | Governance Pillar Leader, with Risk and Engineering inputs | Monthly for PL-001, PL-002, PL-006; weekly for PL-007; quarterly for PL-003, PL-004, PL-005 | CISO, COG Brief |
@@ -508,8 +514,8 @@ Threshold changes are recorded as improvement register entries (IMPREG-001, type
 | | |
 |---|---|
 | **Document ID** | CERG-GOV-MTR-001 |
-| **Version** | 1.32 |
+| **Version** | 1.34 |
 | **Approved By** | CISO |
 | **Next Review** | Annual / metrics-platform change |
-| **Change Log** | 1.0 - Initial publication. Establishes dictionary, source map, CISO dashboard, briefs, and anti-shallow guardrails. · 1.1 - Added Section 3.7 Predictive and Leading Indicators (PL-001 through PL-007). · 1.2 - Restored Section 9 Cadence and Ownership. · 1.3 - Added Section 10 Threshold Calibration: cadence, triggers, rules, change log, and improvement register integration. · 1.32 - Added §6.1 Control Funding Decision Brief pattern for business funding/prioritization decisions tied to control gaps and risk treatments. |
+| **Change Log** | 1.0 - Initial publication. Establishes dictionary, source map, CISO dashboard, briefs, and anti-shallow guardrails. · 1.1 - Added Section 3.7 Predictive and Leading Indicators (PL-001 through PL-007). · 1.2 - Restored Section 9 Cadence and Ownership. · 1.3 - Added Section 10 Threshold Calibration: cadence, triggers, rules, change log, and improvement register integration. · 1.32 - Added §6.1 Control Funding Decision Brief pattern for business funding/prioritization decisions tied to control gaps and risk treatments. · 1.33 - Expanded identity metrics ID-005 through ID-008 for identity assurance package currency, external identity staleness, NHI compliance, and session/token containment readiness. · 1.34 - Split session/token containment into documented-path and tested-path metrics, and added identity assurance package accuracy spot-check metric. |
 

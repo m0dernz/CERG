@@ -6,7 +6,7 @@
 | | |
 |---|---|
 | **Document ID** | CERG-STD-LM-001 |
-| **Version** | 1.21 |
+| **Version** | 1.23 |
 | **Status** | Approved |
 | **Classification** | Public |
 | **Owner** | Risk Pillar Leader (Detection Engineering) |
@@ -318,14 +318,18 @@ Identity is the most common attack surface; CERG names a use case pack explicitl
 | **Use Case** | **Signal** |
 |---|---|
 | Phishing-resistant MFA bypass | Successful auth via legacy MFA when phishing-resistant policy applies. |
-| OAuth consent grant abuse | Unusual or risky app consent in M365 / Workspace. |
-| Privilege escalation in IdP | Unexpected addition to high-privilege groups. |
-| Service account anomaly | Service account auth from new ASN or new endpoint. |
-| Session token theft indicators | Auth from new device with valid refresh token. |
-| Federation tampering | Trust / claim / certificate changes in IdP federation. |
-| Conditional access policy change | Any change to CA policy in M365 / Entra. |
+| OAuth consent grant abuse | Unusual or risky app consent in M365 / Workspace; high-scope consent outside approved workflow. |
+| Privilege escalation in IdP | Unexpected addition to high-privilege groups, privileged role activation outside change window, or new standing admin entitlement. |
+| MFA factor manipulation | New authenticator registration, MFA reset, or recovery-method change followed by high-risk access. |
+| Service account / NHI anomaly | Service account, service principal, workload identity, or API token auth from new ASN, new endpoint, new workload, or unexpected geography. |
+| CI/CD identity abuse | Pipeline token, deploy key, code-signing identity, build agent credential, or repository-to-cloud federation used outside expected pipeline, branch, runner, release window, or source environment. |
+| Code-signing anomaly | Signing key use outside approved release process, unexpected signer, signing from non-build infrastructure, failed timestamping, or certificate change outside change window. |
+| Session token theft indicators | Auth from new device with valid refresh token; impossible travel without fresh MFA; repeated token replay / invalid token attempts. |
+| Federation tampering | Trust / claim / certificate changes in IdP federation; new external IdP trust; signing certificate replacement outside change window. |
+| Conditional access policy change | Any change to CA policy in M365 / Entra, especially policy disablement, exclusion expansion, or legacy-auth exception. |
 | Break-glass account use | Any successful auth on a break-glass account. |
-| Dormant account reactivation | Auth on a disabled / dormant account. |
+| Dormant account reactivation | Auth on a disabled / dormant account; guest or vendor account active after expiration. |
+| External identity anomaly | Guest, vendor, MSP, or federated account accessing outside approved window, geography, device posture, or scoped application set. |
 | Impossible travel / geo anomalies | Two successful auths from geographically inconsistent locations. |
 
 ---
@@ -349,8 +353,8 @@ Identity is the most common attack surface; CERG names a use case pack explicitl
 | | |
 |---|---|
 | **Document ID** | CERG-STD-LM-001 |
-| **Version** | 1.21 |
+| **Version** | 1.23 |
 | **Approved By** | CISO |
 | **Next Review** | Annual / SIEM platform change / ATT&CK matrix update |
-| **Change Log** | 1.0 - Initial publication. Mandatory log sources, retention, SIEM onboarding, day-one detection set anchored to MITRE ATT&CK, OT/CUI/identity overlays, triage and tuning. |
+| **Change Log** | 1.23 - Added CI/CD identity abuse and code-signing anomaly use cases to the identity detection pack. 1.22 - Expanded identity detection use cases for OAuth consent, MFA factor manipulation, NHI anomalies, session-token theft, federation tampering, and external identity misuse. 1.0 - Initial publication. Mandatory log sources, retention, SIEM onboarding, day-one detection set anchored to MITRE ATT&CK, OT/CUI/identity overlays, triage and tuning. |
 

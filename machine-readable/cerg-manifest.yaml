@@ -1,6 +1,6 @@
 # cerg-manifest.yaml
 # DERIVED ARTIFACT — authoritative source is the CERG markdown corpus
-# Generated: 2026-06-27 | Owner: Governance Pillar Leader (Document Control)
+# Generated: 2026-07-03 | Owner: Governance Pillar Leader (Document Control)
 # Regenerate on any change to source documents
 # See METADATA.yaml for full governance information
 
@@ -568,7 +568,7 @@
   title: Metrics Dashboard and Reporting
   document_type: governance_instrument
   domain: MTR
-  version: 1.32
+  version: 1.34
   status: Approved
   classification: Public
   publication_profile: public
@@ -577,7 +577,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: governance/CERG-GOV-MTR-001_Metrics_Dashboard_and_Reporting.md
   source_file: CERG-GOV-MTR-001_Metrics_Dashboard_and_Reporting.md
-  source_hash: d6f96a13a199aaa2fa23e0d26ac080adefe1e0dda4c63a25566b7de0ed144b76
+  source_hash: fa8ffebfce30a239ce56e31e03ce33855b69bd2b79d8e2ea7c6796bea6778568
   canonical_url: https://github.com/m0dernz/CERG/blob/main/governance/CERG-GOV-MTR-001_Metrics_Dashboard_and_Reporting.md
   llm_include: true
   llm_priority: medium
@@ -1028,7 +1028,7 @@
   title: Access Management Runbook
   document_type: procedure
   domain: AC
-  version: 1.1
+  version: 1.3
   status: Approved
   classification: Public
   publication_profile: public
@@ -1037,7 +1037,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: procedures/CERG-PRC-AC-002_Access_Management_Runbook.md
   source_file: CERG-PRC-AC-002_Access_Management_Runbook.md
-  source_hash: b947607bbf87de767b6a934e4712b2b11554453448ec10dcb46e14bb788bf1a4
+  source_hash: b8ea55f049c1bec7e3c14208c83eac0422f8df7b4b151eae14a2689141b2caea
   canonical_url: https://github.com/m0dernz/CERG/blob/main/procedures/CERG-PRC-AC-002_Access_Management_Runbook.md
   llm_include: true
   llm_priority: medium
@@ -1128,7 +1128,7 @@
   title: Incident Response Playbook Set
   document_type: procedure
   domain: IR
-  version: 1.2
+  version: 1.3
   status: External Interface
   classification: External Interface
   publication_profile: external_interface
@@ -1137,7 +1137,7 @@
   parent_artifact: 'Not applicable; adjacent-function artifact cross-referenced by CERG for integration'
   source_path: procedures/CERG-PRC-IR-002_Incident_Response_Playbook_Set.md
   source_file: CERG-PRC-IR-002_Incident_Response_Playbook_Set.md
-  source_hash: 405e8e3d1120b610d91e1416f63b9e8988003555731df778481df76147bc2f3f
+  source_hash: 6d4f1c370977c994eb128011c40c4d80b4666e55d12336d7c309e72057118a4d
   canonical_url: https://github.com/m0dernz/CERG/blob/main/procedures/CERG-PRC-IR-002_Incident_Response_Playbook_Set.md
   llm_include: false
   llm_priority: medium
@@ -1948,7 +1948,7 @@
   title: Access Management Standard
   document_type: standard
   domain: AC
-  version: 1.21
+  version: 1.23
   status: Approved
   classification: Public
   publication_profile: public
@@ -1957,7 +1957,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: standards/CERG-STD-AC-001_Access_Management_Standard.md
   source_file: CERG-STD-AC-001_Access_Management_Standard.md
-  source_hash: 14c85ae69a6ab5a1ff1d74810543643769841e86a5eaf87fc97a1266db3208ad
+  source_hash: 2f365f92d8c5bb99f493b5eb08b498da19f6e733659f5a6b95c24eacce74eb32
   canonical_url: https://github.com/m0dernz/CERG/blob/main/standards/CERG-STD-AC-001_Access_Management_Standard.md
   llm_include: true
   llm_priority: medium
@@ -2128,7 +2128,7 @@
   title: Logging Monitoring and Detection Standard
   document_type: standard
   domain: LM
-  version: 1.21
+  version: 1.23
   status: Approved
   classification: Public
   publication_profile: public
@@ -2137,7 +2137,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: standards/CERG-STD-LM-001_Logging_Monitoring_and_Detection_Standard.md
   source_file: CERG-STD-LM-001_Logging_Monitoring_and_Detection_Standard.md
-  source_hash: 295346c25d4694a695166bf9cbce1783bf9cd4c032ec6329a226b00ee11015bb
+  source_hash: 27afb681858a5a951db727e9d9db6433fee6993cffa4379ac3209619fbe846c0
   canonical_url: https://github.com/m0dernz/CERG/blob/main/standards/CERG-STD-LM-001_Logging_Monitoring_and_Detection_Standard.md
   llm_include: true
   llm_priority: medium

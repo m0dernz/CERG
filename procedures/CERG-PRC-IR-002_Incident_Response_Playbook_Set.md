@@ -6,7 +6,7 @@
 | | |
 |---|---|
 | **Document ID** | CERG-PRC-IR-002 |
-| **Version** | 1.2 |
+| **Version** | 1.3 |
 | **Status** | External Interface |
 | **Classification** | External Interface |
 | **Owner** | Standing IR Team / Incident Commander |
@@ -169,8 +169,21 @@ When an incident is reported, use the following decision tree to select the appr
 | Is the service degradation or outage consistent with a denial-of-service attack? | → Playbook 5 (DDoS) | Continue |
 | Is the threat actor believed to be an internal employee or contractor? | → Playbook 6 (Insider Threat) | Continue |
 | Is there evidence of cloud account or tenant compromise (unusual control-plane activity, new resources)? | → Playbook 7 (Cloud Account) | Continue |
+| Is there evidence of IdP, federation, MFA, OAuth, session-token, or privileged identity compromise? | → Playbook 7 (Cloud Account) if cloud/SaaS involved; otherwise use the closest playbook plus the identity containment checklist in §3.6 | Continue |
 
 If none of the above match, or if the incident type is unclear, activate the playbook that most closely matches the observed indicators and consult the Incident Commander for direction. The Incident Commander may override playbook selection at any time.
+
+### 3.6 Identity Containment Checklist
+
+For any incident involving suspected credential theft, session token theft, OAuth abuse, federation tampering, vendor identity misuse, or privileged account compromise, CERG supports the Incident Commander with the following identity containment options. The IAM operator may be CERG, IT, platform engineering, or an MSP; the operating model does not change the required containment outcomes.
+
+| **Containment Objective** | **CERG / IAM Action** |
+|---|---|
+| Stop active access | Force sign-out, revoke refresh tokens, disable app passwords, revoke risky OAuth grants, and invalidate active privileged sessions. |
+| Stop re-entry | Reset credentials, revoke suspicious authenticators, require phishing-resistant re-enrollment, and review recent MFA / recovery-method changes. |
+| Reduce blast radius | Temporarily remove privileged roles, pause risky automation, disable compromised service principals / NHIs, and restrict vendor / guest access. |
+| Preserve evidence | Export IdP, MFA, PAM, IGA, OAuth, cloud IAM, SaaS audit, and conditional-access logs before retention windows or automated cleanup remove detail. |
+| Validate recovery | Confirm no unauthorized federation trust, OAuth consent, privileged group membership, conditional-access exclusion, or dormant identity remains. |
 
 ### 3.2 Incident Severity Classification
 
@@ -669,7 +682,7 @@ Reviewed by: [Incident Commander, CISO]
 | Field | Value |
 |---|---|
 | **Document ID** | CERG-PRC-IR-002 |
-| **Version** | 1.2 |
+| **Version** | 1.3 |
 | **Status** | External Interface |
 | **Effective Date** | 2026-05-22 |
 | **Classification** | External Interface |
@@ -686,6 +699,7 @@ Reviewed by: [Incident Commander, CISO]
 
 | **Version** | **Date** | **Author** | **Change Summary** |
 |---|---|---|---|
+| 1.3 | 2026-07-02 | Standing IR Team / Incident Commander | Added identity containment checklist for IdP, MFA, OAuth, session-token, vendor identity, and privileged account compromise scenarios. |
 | 1.2 | 2026-06-18 | Standing IR Team / Incident Commander | Standardized core playbook severity labels to paired P / Sev notation. |
 | 1.1 | 2026-06-18 | Standing IR Team / Incident Commander | Clarified that the standing IR team owns this playbook set, exercises, notification-clock process, and scenario execution; CERG Governance provides repository, evidence, regulatory-mapping, and post-incident improvement support only. |
 | 1.0 Draft | 2026-05-22 | Cyber Governance | Initial release. Establishes CERG-facing incident playbooks for ransomware, business email compromise, data breach or exfiltration, phishing campaign, distributed denial of service, insider threat, and cloud account compromise. Preserves the Operating Model boundary that the standing Incident Response team owns active incident command while CERG supplies control, evidence, risk, and recovery support. |

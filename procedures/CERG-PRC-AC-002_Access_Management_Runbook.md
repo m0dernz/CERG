@@ -6,7 +6,7 @@
 | | |
 |---|---|
 | **Document ID** | CERG-PRC-AC-002 |
-| **Version** | 1.1 |
+| **Version** | 1.3 |
 | **Status** | Approved |
 | **Classification** | Public |
 | **Owner** | Identity Engineer |
@@ -23,7 +23,7 @@
 ## Table of Contents
 
 1. [Purpose and Scope](#1-purpose-and-scope)
-2. [The Two Operating Models, CERG-Owned vs. Cyber-Contributing](#2-the-two-operating-models--cerg-owned-vs-cyber-contributing)
+2. [IAM Operating Models and Assurance](#2-iam-operating-models-and-assurance)
 3. [Joiner / Mover / Leaver](#3-joiner--mover--leaver)
 4. [Access Request and Approval](#4-access-request-and-approval)
 5. [Access Review and Recertification](#5-access-review-and-recertification)
@@ -51,18 +51,47 @@ The runbook covers every identity in the environment: human (employee, contracto
 
 ---
 
-## 2. The Two Operating Models: CERG-Owned vs. Cyber-Contributing
+## 2. IAM Operating Models and Assurance
 
-| **Aspect** | **CERG-Owned IAM** | **CERG-Contributing IAM** |
+This runbook supports multiple IAM operating models. The workflow requirements do not change when the hands-on operator changes; what changes is who performs the work and what evidence CERG uses to verify that the work happened.
+
+| **Aspect** | **CERG-Owned IAM** | **Cyber-Contributing IAM** |
 |---|---|---|
-| Procedural authority | CERG owns this runbook and the IAM operations team. | IAM team owns operations; CERG provides cyber requirements via this runbook. |
+| Procedural authority | CERG owns this runbook and the IAM operations team. | IAM / IT / MSP owns operations; CERG provides cyber requirements via this runbook and STD-AC-001. |
 | Tooling decisions | CERG-driven. | IAM-driven with CERG sign-off where security-material. |
-| Day-to-day operations | CERG. | IAM. |
-| Recertification execution | CERG runs. | IAM runs; CERG audits. |
-| Detection / monitoring | CERG (always). | CERG (always). |
-| Audit interface | CERG. | Shared. |
+| Day-to-day operations | CERG. | IAM / IT / MSP / platform owner. |
+| Recertification execution | CERG runs. | IAM runs; CERG reviews evidence and samples decisions. |
+| Detection / monitoring | CERG (always). | CERG (always), with log delivery obligations on the operator. |
+| Audit interface | CERG. | Shared; CERG owns cyber evidence quality and audit response coordination. |
+| Exception handling | CERG records and approves per risk authority. | Operator submits divergence; CERG records, approves, tracks, or escalates. |
 
 Where IAM is outside CERG, every requirement below is either implemented by the IAM team, or a formal documented divergence is recorded in the risk register per [`CERG-PRC-RM-001`](CERG-PRC-RM-001_Risk_Register_and_Exception_Process.md).
+
+### 2.1 Cyber-Required IAM Operating Agreement
+
+For any IAM capability operated outside CERG, maintain a lightweight operating agreement or service record with:
+
+| **Element** | **Minimum Content** |
+|---|---|
+| Accountable operator | Team or provider operating IdP, MFA, IGA, PAM, secrets, federation, or related IAM capability. |
+| CERG control owner | Named CERG role responsible for evidence review, exceptions, and escalation. |
+| Scope | Systems, tenants, identity classes, data tiers, and regulatory scopes covered. |
+| Control commitments | MFA, session, PAM, JML, access review, NHI, vendor access, logging, and emergency access obligations. |
+| Evidence cadence | What exports/reports are delivered, by whom, and how often. |
+| Change notification | Identity-control changes that require CERG review before implementation. |
+| Incident escalation | Who can force sign-out, revoke tokens, disable accounts, rotate secrets, or activate vendor kill-switch procedures during an incident. |
+
+### 2.2 Identity Assurance Package Workflow
+
+For Tier 1 systems, regulated environments, identity platforms, SaaS tenants, and critical vendor integrations, the operator maintains the Identity Assurance Package defined in [`CERG-STD-AC-001`](../standards/CERG-STD-AC-001_Access_Management_Standard.md) §2.3.
+
+| **Trigger** | **Action** | **Owner** |
+|---|---|---|
+| New Tier 1 system, SaaS tenant, federation, or privileged access path | Create assurance package before production use. | IAM Operator + System Owner |
+| Material identity change | Update architecture, control configuration, access population, and detection hooks. | IAM Operator |
+| Quarterly access review | Add current access-review, privileged-review, NHI-review, and vendor-review evidence. | IAM Operator + Governance |
+| Identity-related incident or near miss | Preserve current package snapshot; update gaps after lessons learned. | CERG Risk + IAM Operator |
+| Annual control assessment | Sample package completeness and record findings. | Governance / Evidence Librarian |
 
 ---
 
@@ -96,10 +125,10 @@ Where IAM is outside CERG, every requirement below is either implemented by the 
 | **Step** | **Trigger / Owner / SLA** |
 |---|---|
 | HR termination event in HRIS | HR - same day |
-| Active sessions terminated | IdP - within 1 hour |
+| Active sessions, refresh tokens, app passwords, and high-risk OAuth grants revoked | IdP / IAM operator - within 1 hour |
 | Account disabled | IGA - within 1 business day (within 1 hour for involuntary) |
 | Privileged credentials and secrets attributed to user rotated | PAM + Engineering - within 1 business day |
-| MFA tokens / hardware deauthorized | Identity Engineer - within 1 business day |
+| MFA tokens / hardware deauthorized; authenticator registrations reviewed for suspicious additions | Identity Engineer / IAM operator - within 1 business day |
 | Mailbox and data retention applied per Legal | Engineering - IT |
 | Account permanently deleted | IGA - after retention period |
 
@@ -121,6 +150,7 @@ Same as 3.3 with all SLAs collapsed to "immediately" and the SOC alerted to moni
 | Privileged role | Always separately requested; PAM-mediated. |
 | Sensitive system role | System owner approval required. |
 | Vendor / external | See Section 10. |
+| OAuth / application consent / API integration | Requires owner, data scope, consent scope, expiration or review date, and logging path. |
 
 ### 4.2 Approval Chain
 
@@ -129,7 +159,8 @@ Same as 3.3 with all SLAs collapsed to "immediately" and the SOC alerted to moni
 | Standard role | Direct manager |
 | Sensitive role | Direct manager + system owner |
 | Privileged role | Direct manager + role owner + Identity Engineer |
-| Vendor / external | Sponsor + Identity Engineer + TPRM record |
+| Vendor / external | Sponsor + Identity Engineer / IAM operator + TPRM record |
+| OAuth / high-scope application consent | Application owner + Identity Engineer / IAM operator + Governance for Restricted or regulated data |
 | Break-glass | Per Section 7 |
 
 ### 4.3 Approval Discipline
@@ -282,7 +313,9 @@ This section operationalizes [`CERG-STD-CR-001`](../standards/CERG-STD-CR-001_Cr
 | Retrieve at runtime | Workload pulls; never stored in repo or container image. |
 | Rotate | Schedule + event triggers (compromise indicator, vendor incident, workforce change). |
 | Revoke | On detection of compromise, on user departure, on service retirement. |
-| Audit | Continuous via SIEM; quarterly review of long-lived static credentials with bias toward replacement. |
+| Revoke OAuth / delegated grants | On suspicious consent, vendor incident, excessive scope, owner departure, or application retirement. |
+| Force re-authentication | On risk signal, session theft indicator, MFA reset, privileged elevation, security-policy change, or incident containment direction. |
+| Audit | Continuous via SIEM; quarterly review of long-lived static credentials, OAuth grants, app passwords, and static API keys with bias toward replacement. |
 
 ---
 
@@ -305,7 +338,20 @@ This section operationalizes [`CERG-STD-CR-001`](../standards/CERG-STD-CR-001_Cr
 - Vendor sessions recorded per PAM policy.
 - Geographic anomalies trigger alerts.
 - Quarterly review of all active vendor access.
-- Off-boarding triggered by project closeout, vendor termination, or country reclassification.
+- Vendor OAuth grants, delegated access, API tokens, shared mailboxes, and admin roles are included in review scope.
+- Off-boarding triggered by project closeout, vendor termination, country reclassification, or vendor security incident.
+
+### 10.3 Vendor and MSP Kill-Switch
+
+For vendors, MSPs, and external operators with administrative or persistent access, maintain and test a kill-switch procedure.
+
+| **Requirement** | **Minimum Evidence** |
+|---|---|
+| Named internal sponsor and technical owner | Vendor access record and TPRM record. |
+| Complete access inventory | Accounts, groups, federation trusts, OAuth grants, API tokens, remote-access paths, PAM entries, and service principals. |
+| Disable path | Documented steps to disable access without vendor participation. |
+| Log preservation | SIEM query or evidence location for vendor activity before and after disablement. |
+| Test cadence | Tier 1 vendors with persistent or administrative access: semi-annual tabletop or technical test. Tier 2 privileged or time-bound vendors: annual test. Lower tiers: risk-based review. Record result and gaps. |
 
 ---
 
@@ -340,14 +386,15 @@ Phishing-resistant MFA coverage is reported as `ID-001` in [`CERG-GOV-MTR-001`](
 
 | **Role** | **Responsibility** |
 |---|---|
-| **Identity Engineer** | Owns this runbook. Designs, implements, and maintains the identity infrastructure including IGA, IdP, PAM, and secrets management. Ensures JML workflows execute within SLAs. Manages MFA enrollment, service account lifecycle, and vendor access provisioning. |
+| **Identity Engineer** | Owns the cyber requirements in this runbook when IAM is CERG-operated. Where IAM is operated by IT or an MSP, validates IAM design, reviews material changes, samples evidence, and escalates divergence. |
+| **IAM Operator** | Performs day-to-day identity operations for IdP, IGA, MFA, PAM, secrets, federation, access requests, access reviews, and lifecycle workflows. May be CERG, IT, platform engineering, or an MSP. |
 | **Manager / Approver** | Reviews and approves access requests for direct reports. Validates business need and role alignment. Participates in recertification campaigns; certifies, modifies, or removes entitlements with accountability. Initiates mover and leaver notifications to HR/IGA. |
 | **System Owner** | Approves access to sensitive systems under their ownership. Defines role requirements and entitlement baselines for their systems. Participates in recertification for system-specific access. Ensures service accounts under their systems have named human owners. |
 | **PAM Administrator** | Operates the PAM platform. Onboards privileged credentials, brokers sessions, manages session recording and retention. Executes credential rotation on checkout and post-use. Maintains break-glass credentials and coordinates quarterly hygiene checks. |
 | **Vendor Risk Analyst** | Owns the vendor access lifecycle from a risk perspective. Creates and maintains vendor records in TPRM. Validates country-of-access against the Country Risk Register. Ensures vendor access is time-bounded, scoped to minimum required, and terminated on project closeout. |
 | **User** | Uses only approved authentication factors. Reports MFA token loss immediately. Does not share credentials or service accounts. Completes required security awareness training before first access. Complies with access request and recertification requirements. |
 | **SOC / Detection Engineer** | Monitors identity events for anomalies per [CERG-STD-LM-001](../standards/CERG-STD-LM-001_Logging_Monitoring_and_Detection_Standard.md). Detects and escalates break-glass misuse, service account interactive logon, credential reuse, and geographic anomalies. Tunes detection rules in coordination with the Identity Engineer. |
-| **CISO** | Endorses this runbook. Resolves disputes escalated beyond the Identity Engineer and Cyber Engineering Pillar Leader. Approves risk acceptances for MFA exceptions and compensating controls beyond standard tolerance. Signs off on annual recertification program results. |
+| **CISO** | Endorses this runbook. Resolves disputes escalated beyond the Identity Engineer, IAM operator, and Cyber Engineering Pillar Leader. Approves risk acceptances for MFA exceptions and compensating controls beyond standard tolerance. Signs off on annual recertification program results. |
 
 ---
 ## 13. Regulatory and Framework Alignment Summary
@@ -368,7 +415,7 @@ Phishing-resistant MFA coverage is reported as `ID-001` in [`CERG-GOV-MTR-001`](
 | | |
 |---|---|
 | **Document ID** | CERG-PRC-AC-002 |
-| **Version** | 1.1 |
+| **Version** | 1.3 |
 | **Approved By** | CISO |
 | **Next Review** | Annual / IAM tooling change |
-| **Change Log** | 1.1 - Added privileged access review evidence checklist and PRC-AUD evidence linkage. 1.0 - Initial publication. JML, access request, recertification, PAM, break-glass, service accounts, secrets, vendor access, MFA. Dual operating model preserved. |
+| **Change Log** | 1.3 - Tightened vendor/MSP kill-switch testing cadence for Tier 1 persistent or administrative access to semi-annual. 1.2 - Added cyber-required IAM operating agreement, identity assurance package workflow, OAuth/session/token revocation steps, and vendor/MSP kill-switch requirements. 1.1 - Added privileged access review evidence checklist and PRC-AUD evidence linkage. 1.0 - Initial publication. JML, access request, recertification, PAM, break-glass, service accounts, secrets, vendor access, MFA. |
