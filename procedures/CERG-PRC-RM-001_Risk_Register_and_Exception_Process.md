@@ -98,6 +98,7 @@ The board or an authorized board committee reviews and affirms the organization'
 | **Risk Register Owner** | Owns this procedure and the risk register tool. Maintains the data model, taxonomy, dashboards, and reporting. Coordinates the risk review cadence. Curates the register for quality and completeness. |
 | **Risk Pillar Leader** | Identifies risks through exposure management, threat intelligence, vendor assessment, adversarial testing, and continuous monitoring. Records risks in the register and recommends scoring and treatment. |
 | **Engineering Pillar Leader** | Identifies risks through architecture review and pre-production assessment. Recommends compensating controls. Implements risk-reduction treatments on assets it supports. |
+| **Governance Leader** | Review frequenetly occured control deficiencies and update the standards and procedures accordingly. |
 | **Business / Asset Owners (Risk Owners)** | Accountable for the risks associated with the systems and processes they own. Authorize treatment decisions for their scope. Sign on risk acceptances. |
 | **Approvers (Engineering Pillar Leader → CISO → Executive Sponsor)** | Apply the approval matrix in Section 8. Approvers do not own risks; they authorize the treatment decision against organizational policy. |
 | **CISO** | Approves High and Critical risk acceptances and material exceptions. Owns escalation to executive leadership and the board. Owns the overall organizational risk posture. |
