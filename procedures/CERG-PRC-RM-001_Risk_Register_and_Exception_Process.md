@@ -99,7 +99,7 @@ The board or an authorized board committee reviews and affirms the organization'
 | **Risk Pillar Leader** | Identifies risks through exposure management, threat intelligence, vendor assessment, adversarial testing, and continuous monitoring. Records risks in the register and recommends scoring and treatment. |
 | **Engineering Pillar Leader** | Identifies risks through architecture review and pre-production assessment. Recommends compensating controls. Implements risk-reduction treatments on assets it supports. |
 | **Business / Asset Owners (Risk Owners)** | Accountable for the risks associated with the systems and processes they own. Authorize treatment decisions for their scope. Sign on risk acceptances. |
-| **Approvers (Engineering Pillar Leader → CISO → Executive Sponsor)** | Apply the approval matrix in Section 8. Approvers do not own risks; they authorize the treatment decision against organizational policy. |
+| **Approvers (Engineering Pillar Leader/Risk Pillar Leader → Principle Manager  → CISO → Executive Sponsor)** | Apply the approval matrix in Section 8. Approvers do not own risks; they authorize the treatment decision against organizational policy. |
 | **CISO** | Approves High and Critical risk acceptances and material exceptions. Owns escalation to executive leadership and the board. Owns the overall organizational risk posture. |
 | **Internal Audit and Compliance Partners** | Consume the register as evidence of risk management activity. Verify integrity of the process through periodic audit. |
 
@@ -116,8 +116,8 @@ Risks are identified continuously from the following sources, each of which feed
 | **Source** | **Examples** |
 |---|---|
 | Exposure management | Out-of-SLA findings, KEV exposures, structural patching limitations. |
-| Engineering review | Architectural gaps identified in pre-production review, IT/OT convergence findings, technical debt with security implications. |
-| Adversarial validation | Pen-test findings, red-team paths to crown-jewel assets, control-bypass discoveries. |
+| Engineering review | Architectural or design gaps identified in pre-production review, IT/OT convergence findings, technical debt with security implications. |
+| Adversarial validation | Cybersecurity test findings,Pen-test findings, red-team paths to crown-jewel assets, control-bypass discoveries. |
 | Third-party / vendor risk | SOC 2 / ISO 27001 / FedRAMP exceptions, vendor incidents, supply-chain advisories. |
 | Threat intelligence | Threats specifically targeting the organization's industry, technology, or geography. |
 | Compliance monitoring | Findings from internal compliance reviews, regulator examination, external audit. |
@@ -128,7 +128,7 @@ Risks are identified continuously from the following sources, each of which feed
 
 ### 3.2 Intake
 
-Any personnel may submit a candidate risk through the centralized intake. Submissions include the proposed risk statement, affected assets, observed or estimated impact, and supporting context. Governance triages submissions within 5 business days into one of: accept as new register entry, merge with existing entry, escalate to active investigation, or return with explanation.
+Any personnel may submit a candidate risk through the centralized intake. Submissions include the proposed risk statement, affected assets, observed or estimated impact, and supporting context. Governance team triages submissions within 5 business days into one of: accept as new register entry, merge with existing entry, escalate to active investigation to risk team, or return with explanation.
 
 ---
 
@@ -176,7 +176,7 @@ The matrix produces a residual risk rating after considering controls in place. 
 | 2–5 | **Low** | Track; treat as resources allow; acceptance follows RMF-001 §9.7. |
 | 6–11 | **Medium** | Treat within a defined plan; review at standing cadence; acceptance follows RMF-001 §9.7. |
 | 12–19 | **High** | Treat with priority; acceptance follows RMF-001 §9.7 and requires CISO + Business Owner approval. |
-| 20–25 | **Critical** | Immediate treatment required; acceptance follows RMF-001 §9.7 and requires CISO + Executive Sponsor approval plus board notification. |
+| 20–25 | **Very High** | Immediate treatment required; acceptance follows RMF-001 §9.7 and requires CISO + Executive Sponsor approval plus board notification. |
 
 ### 4.3 Quantitative Calibration Guide
 
@@ -253,6 +253,7 @@ A funding or capacity deferral does not by itself accept residual risk. If resid
 | Likelihood / Impact / Rating | Current scores and band. |
 | Inherent Rating | Hypothetical rating absent controls (recorded once at intake; not re-scored each cycle). |
 | Controls in Place | Existing controls reducing the risk. |
+| Residual Rating   | Remaining risk based on compensating controls. |
 | Treatment Decision | Reduce / Transfer / Avoid / Accept. |
 | Treatment Plan | Plan summary. |
 | Target Dates | Milestone and final. |
@@ -321,6 +322,7 @@ An exception is required whenever a system, person, or process intentionally dev
 - A SaaS application not behind SSO due to a technical limitation
 - A vulnerability remediation that cannot meet the SLA
 - A vendor account configuration not meeting the access management standard
+- An End of Life system may be still in use due to various depenendencies such as financial, other systems etc.
 - An OT system that cannot satisfy a CIP-007 requirement on schedule (in addition to the CIP deviation process)
 
 ### 7.3 Exception Workflow
@@ -328,12 +330,13 @@ An exception is required whenever a system, person, or process intentionally dev
 | **Step** | **Action** | **Owner** |
 |---|---|---|
 | 1 | Requester submits exception with: control reference, business / operational justification, affected systems, proposed compensating controls, risk owner, and proposed duration. | Requester |
-| 2 | Engineering reviews proposed compensating controls. | Engineering |
-| 3 | Risk assesses likelihood and impact of the residual risk; provides a written risk finding. | Risk |
-| 4 | Governance applies the approval matrix (Section 8); routes for approval. Business owner approval is required for any exception carrying residual risk above Low. | Governance |
-| 5 | Approver decides: approve, approve with conditions, deny, or return for additional information. | Approver |
-| 6 | Approved exception is entered into the exception register and linked to the risk register when residual exposure exists; compensating controls are tracked. | Governance |
-| 7 | At expiration, the exception is re-evaluated. Renewal requires a new approval cycle. Renewals shall not be granted by default. | Governance |
+| 2 | For new developement/project, Engineering reviews proposed compensating controls. | Engineering |
+| 3 | For production, Governace and Risk reviews proposed compensating controls. | Governance and Risk |
+| 4 | Risk assesses likelihood and impact of the residual risk; provides a written risk finding. | Risk |
+| 5 | Governance applies the approval matrix (Section 8); routes for approval. Business owner approval is required for any exception carrying residual risk above Low. | Governance |
+| 6 | Approver decides: approve, approve with conditions, deny, or return for additional information. | Approver |
+| 7 | Approved exception is entered into the exception register and linked to the risk register when residual exposure exists; compensating controls are tracked. | Governance |
+| 8 | At expiration, the exception is re-evaluated. Renewal requires a new approval cycle. Renewals shall not be granted by default. | Governance |
 
 ### 7.4 Exception Discipline
 
@@ -348,9 +351,10 @@ Every exception carries an expiration date. The following warning chain ensures 
 
 | Timing | Action | Actor |
 |--------|--------|-------|
-| **30 days before expiration** | Automated notification to Exception Owner and Risk Register Owner | Governance (Evidence Librarian or automated calendar) |
-| **14 days before expiration** | Escalation notification to Pillar Leader; Exception Owner must confirm renewal request submitted or closure planned | Risk Register Owner |
-| **7 days before expiration** | Final escalation to Governance Pillar Leader; Exception Owner must have a disposition (renew, close, or convert to finding) | Governance Pillar Leader |
+| **90 days before expiration** | Automated notification to Exception Owner and Risk Register Owner | Governance (Evidence Librarian or automated calendar) |
+| **60 days before expiration** | Escalation notification to Pillar Leader; Exception Owner must confirm renewal request submitted or closure planned | Risk Register Owner |
+| **30 days before expiration** | Escalation to Governance Pillar Leader; Exception Owner must have a disposition (renew, close, or convert to finding) | Governance Pillar Leader |
+| **7 days before expiration** | Final escalation to Senior leadership; Exception Owner must have a disposition (renew, close, or convert to finding) | Governance Pillar Leader |
 | **Post-expiration (Day 0)** | Auto-create Finding Record (severity: High); flag affected control as "gap open"; the exception is no longer valid | Risk Register Owner |
 | **Post-expiration (Day 5)** | If no disposition: escalate to CISO | Governance Pillar Leader |
 
