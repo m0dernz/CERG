@@ -412,7 +412,7 @@ EXCEPTION REQUEST FORM - EXC-YYYY-NNNN
    Description of the risk created by this exception:
    Existing Compensating Controls:
    Residual Risk after Compensating Controls (Likelihood × Impact):
-   Residual Risk Rating (Low / Medium / High / Critical):
+   Residual Risk Rating (Very Low / Low / Moderate / High / Very High):
 
 6. COMPENSATING CONTROLS (detailed)
    | Control | Description | Owner | Implementation Date | Validation Method |
@@ -456,7 +456,7 @@ Risk treatment decisions require documented approval from the authority matching
 | Medium risk – Reduce / Transfer / Avoid | Risk: performs risk assessment; Engineering: validates treatment plan | Business Owner: signs off on treatment | Risk or Engineering Pillar Leader |
 | Medium risk – Accept | Risk: performs risk assessment; Governance: documents conditions | Business Owner: accepts residual risk | Business Owner + Pillar Leader or Governance Pillar Leader |
 | High risk – Accept | Risk: signs finding; Governance: structures package | Business Owner: accepts business consequence | CISO + Business Owner |
-| Critical risk – Accept | Risk: signs finding; Governance: structures package | Executive Sponsor: accepts business consequence | CISO + Executive Sponsor; Board notified |
+| Very High risk – Accept | Risk: signs finding; Governance: structures package | Executive Sponsor: accepts business consequence | CISO + Executive Sponsor; Board notified |
 | Any exception affecting BES Cyber Systems | As above per severity | As above | As above + NERC-CIP deviation process |
 | Any exception affecting CUI environment posture | As above per severity | As above | As above + POA&M entry |
 | Any exception affecting [SOX](https://www.govinfo.gov/app/details/PLAW-107publ204) ITGC | As above per severity | As above | As above + CFO designee notification or approval where required by SOX governance |
@@ -483,7 +483,7 @@ Approvers may delegate within their authority but shall document the delegation.
 
 The following trigger escalation to the CISO outside the standing cadence:
 
-- A new High or Critical risk
+- A new High or Very High risk
 - A material score increase on any existing risk
 - A risk acceptance approaching expiration without a credible treatment plan
 - A material deterioration in compensating control performance
