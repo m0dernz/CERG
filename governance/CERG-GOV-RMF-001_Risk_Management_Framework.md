@@ -139,7 +139,7 @@ The following RACI sub-matrices resolve pillar ownership ambiguity for specific 
 
 | [CSF](https://www.nist.gov/cyberframework) Function | CERG-RMF Phase(s) | What CERG Does |
 |---|---|---|
-| **GOVERN** | Categorize, Authorize | Provides insights on risk strategy, risk appetite, and accountability structures to organizational leaders. Maintains policy hierarchy that governs all risk decisions. |
+| **GOVERN** | Categorize, Authorize | Supports leadership in defining risk strategy, risk appetite, and accountability structures; operationalizes approved appetite through policy, thresholds, decision rights, and reporting. |
 | **IDENTIFY** | Categorize, Assess | Maintains asset inventories and system categorization. Conducts risk assessments, threat modeling, and vendor risk reviews. |
 | **PROTECT** | Select, Implement | Engineering designs and deploys protective controls per selected baselines. Governance sets the standard; Risk validates effectiveness. |
 | **DETECT** | Monitor, Assess | Risk operates vulnerability scanning, threat intelligence, and anomaly detection. Feeds findings to IR and Governance continuously. |
