@@ -35,7 +35,7 @@
 12. [Quality Gates Before Commit](#12-quality-gates-before-commit)
 12.5. [Document Lifecycle Procedure](#125-document-lifecycle-procedure)
 13. [Document Control](#13-document-control)
-
+14. [Document Appearance](#14-document-appearance)
 ---
 
 ## 1. Purpose and Scope
@@ -546,6 +546,17 @@ When a new framework revision is published (e.g., NIST 800-53 Rev 6, NIST 800-17
 | **Frameworks** | NIST CSF 2.0 GOVERN; ISO/IEC 27001 A.5; NIST 800-53r5 PM |
 | **Regulations** | Cross-cutting |
 | **Environments** | CERG documentation library |
+
+---
+
+## 14. Document Appearance
+
+- Headers should use a solid color consistent with current branding.
+- Do not use more than 1 color for headers.
+- Keep complimentary colors minimal at 1-2
+- Use the same color and font across related workbooks, tabs, intakes, and presentations.
+- Avoid using fades or gradients.
+- Avoid 'playful' hues that would take from the importance and professionalism of messaging. 
 
 ### Revision History
 
