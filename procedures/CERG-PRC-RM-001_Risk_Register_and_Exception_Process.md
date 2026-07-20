@@ -407,8 +407,7 @@ EXCEPTION REQUEST FORM - EXC-YYYY-NNNN
    Inherent Risk (Likelihood × Impact):
    Description of the risk created by this exception:
    Existing Compensating Controls:
-   Residual Risk after Compensating Controls (Likelihood × Impact):
-   Residual Risk Rating (Low / Medium / High / Critical):
+   Residual Risk after Compensating Controls (Very Low / Low / Medium / High / Very High):
 
 6. COMPENSATING CONTROLS (detailed)
    | Control | Description | Owner | Implementation Date | Validation Method |
