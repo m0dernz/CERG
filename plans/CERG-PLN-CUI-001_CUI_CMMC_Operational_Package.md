@@ -43,7 +43,7 @@
 
 ## 1. Purpose and Scope
 
-The CUI Handling Standard names what is required; this package makes the standard executable. It assembles the SSP, POA&M, SPRS worksheet, boundary diagrams, data flow maps, category register, 800-171 evidence matrix, [CMMC L2](https://dodcio.defense.gov/CMMC/) readiness checklist, C3PAO logistics, subcontractor register, and FedRAMP equivalency evidence into a single operational binder.
+The Controlled Unclassified Information (CUI) Handling Standard names what is required; this package makes the standard executable. It assembles the System Security Plan (SSP), Plan of Action & Milestones (POA&M), Supplier Performance Risk System (SPRS) worksheet, boundary diagrams, data flow maps, category register, 800-171 evidence matrix, [CMMC L2](https://dodcio.defense.gov/CMMC/) readiness checklist, Certified Third-Party Assessor Organization (C3PAO) logistics, subcontractor register, and FedRAMP equivalency evidence into a single operational binder.
 
 It applies to every system, person, and process within the CUI boundary, and to every CUI subcontractor receiving CUI from the organization.
 
