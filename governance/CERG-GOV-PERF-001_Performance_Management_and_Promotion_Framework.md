@@ -128,6 +128,7 @@ Management performance adds three dimensions to the SME evaluation. A Manager is
 | **People Leadership** | Quality of hiring, development, feedback, and retention | CMP-001 §7.1; JA-001 §5 grade definitions |
 | **Team Delivery** | The team's output against objectives, not the manager's personal output | JA-001 §5 operational accountability definitions |
 | **Strategic Contribution** | Quality of strategy, resource planning, and stakeholder management | CMP-001 §7.2-7.5 |
+| **Cybersecurity Risk Metric** | Measurement of Risk above or below Organizational thresholds Manger brings to the organization (this is the stick to enforcing risk.  If accepted, CERG-GOV-MTR-001 would be used to provide how to "equalize" measurement across different systems for example, critical vs non-Essential and management track would need to be updated) | maybe CERG-GOV-MTR-001 or CMP-001 §7
 
 ### 4.3 Rating Scale
 
