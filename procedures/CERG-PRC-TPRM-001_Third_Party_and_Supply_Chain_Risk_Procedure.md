@@ -100,7 +100,7 @@ CERG adjusts the vendor tier *up* only when one or more cyber-specific concerns 
 | Vendor has a recent (≤ 12 months) material breach affecting its customers | +1 tier with case-by-case review |
 | Vendor is operating below the evidence floor for its proposed tier | hold at lower tier until evidence is current |
 | Vendor's product / service supports a SOX-relevant business process | +1 tier if not already T2+ |
-| Vendor product is software shipped to be deployed in our environment with elevated privileges | +1 tier |
+| Vendor product is software shipped to be deployed in our environment with execution privilege, network reach, update authority, and ability to impact enterprise operations| +1 tier |
 | Vendor relationship requires non-US access to in-scope systems / data | +1 tier (and see Section 10) |
 
 > **Adjustments Are Documented, Not Negotiated**
