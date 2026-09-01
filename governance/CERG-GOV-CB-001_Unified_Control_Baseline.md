@@ -6,7 +6,7 @@
 | | |
 |---|---|
 | **Document ID** | CERG-GOV-CB-001 |
-| **Version** | 2.0.1 |
+| **Version** | 2.1 |
 | **Status** | Approved |
 | **Classification** | Public |
 | **Owner** | Governance Pillar Leader (Control Baseline) |
@@ -53,7 +53,7 @@ It applies to every in-scope asset and every CERG-owned control. Where a subordi
 The baseline is built on five non-negotiable principles. Anything that violates them is not in the baseline.
 
 1. **NIST is the spine.** [NIST 800-53r5](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) control families are the organizing structure. CERG-native controls are layered onto that spine, never the reverse. When a NIST family fully covers an intent, CERG inherits the NIST language and identifier rather than coining a new one.
-2. **Each control has one accountable CERG pillar.** Engineering, Risk, or Governance, never "shared." Supporting roles are listed separately. Accountability without ambiguity is the prerequisite to evidence.
+2. **Each control has a clear CERG Control Owner.** This is the CERG pillar accountable for the baseline control's guardrail, assurance method, or evidence model. It is not the first-line system or service owner that implements the control locally. Where a control has an explicit cross-pillar handoff, the primary owner and supporting role are named. Governance owns baseline authority and assurance expectations; local implementation is assigned by the adopter.
 3. **Each control has named evidence.** A control without a named evidence artifact is a control without proof; it does not enter the baseline.
 4. **Overlays add, they do not redefine.** CUI, BES, [SOX](https://www.govinfo.gov/app/details/PLAW-107publ204), and Safety overlays add controls or tighten parameters of base controls. They never silently relax the base.
 5. **Inheritance is documented or it does not exist.** Inheritance from cloud/SaaS providers requires the artifact named in Section 5. "We assume the provider handles it" is not inheritance.
@@ -64,7 +64,7 @@ The baseline is built on five non-negotiable principles. Anything that violates 
 
 CERG uses [NIST 800-53r5](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) control families as the top-level grouping. Each family has a one-line CERG intent and a primary owning pillar.
 
-| **Family** | **NIST Code** | **CERG Intent (one line)** | **Primary Owner** |
+| **Family** | **NIST Code** | **CERG Intent (one line)** | **CERG Control Owner** |
 |---|---|---|---|
 | Access Control | AC | Identity-bound, least-privilege access enforced consistently across IT, cloud, SaaS, OT, and CUI. | Engineering |
 | Awareness and Training | AT | Role-relevant security training; CERG defines the cyber content, Awareness function delivers. | Governance (content) |
@@ -99,7 +99,7 @@ Every control entry in the baseline carries one of the following statuses. The s
 | `Inherited` | Implementation is provided by another party - cloud provider, SaaS provider, parent enterprise control, IAM team. | Inheritance Evidence Package (Section 5). |
 | `Planned` | Control is planned with an owner and target date. | POA&M entry with date and owner. |
 | `Risk Accepted` | Deviation is approved and tracked via [CERG-PRC-RM-001](../procedures/CERG-PRC-RM-001_Risk_Register_and_Exception_Process.md) Section 7. | Risk register entry, exception ID, approver. |
-| `Not Applicable` | Control does not apply to this scope. | Documented N/A rationale (system type, no in-scope data, etc.). |
+| `Not Applicable` | Control does not apply to this local system, service, change, or scope. It is not an exception. | Documented local N/A rationale, such as system type or absence of in-scope data. If the control applies but cannot be met, use the exception or risk process. |
 
 > **What's Not on the List**
 >
@@ -128,7 +128,11 @@ This package is the basis of every "we inherit it from AWS / Azure / GCP / M365 
 
 The organizational baseline applies to every in-scope asset. Overlays in Section 7 add or tighten controls for High-Impact, CUI, BES, [SOX](https://www.govinfo.gov/app/details/PLAW-107publ204), and OT Safety scopes.
 
-The full implementation-ready control set is captured by family in the sections that follow. Each entry has: Control ID · Action Statement · System Applicability · Owning Pillar · Named Evidence · Frequency · Subordinate Standard.
+The full implementation-ready control set is captured by family in the sections that follow. Each entry has: Control ID · Action Statement · System Applicability · CERG Control Owner · Named Evidence · Frequency · Subordinate Standard.
+
+**Control ownership and applicability.** CERG owns control definition, authority, and assurance. First-line system and service owners implement and operate applicable controls in their scope. Governance assures conformance through status, evidence, exceptions, and corrective-action tracking; Risk validates exposure and control effectiveness. Each applicable control has an implementation status. `Not Applicable` is a local applicability decision with a documented rationale, not a global escape hatch. CERG does not prescribe a universal project lifecycle, gate sequence, control-management tool, or per-system record format.
+
+Teams that need per-system applicability, named local ownership, N/A rationales, and control-by-control evidence may use [`CERG-TMPL-SCP-001`](../templates/CERG-TMPL-SCP-001_System_Control_Profile_Template.md) or an equivalent local control-management record.
 
 System Applicability uses one or more of the following values: Hardware, Software, Network, Cloud, Data, Process.
 
@@ -136,7 +140,7 @@ Section 6 entries below are organized by family and reference the subordinate st
 
 ### 6.1 Access Control (AC)
 
-| **Control**                      | **Statement**                                                                                                                                                                                                   | **System Applicability**                          | **Owner**   | **Evidence**                      | **Min Freq**           | **Std**                 |
+| **Control**                      | **Statement**                                                                                                                                                                                                   | **System Applicability**                          | **CERG Control Owner**   | **Evidence**                      | **Min Freq**           | **Std**                 |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | ----------- | --------------------------------- | ---------------------- | ----------------------- |
 | AC-2 Account Management          | Make sure every account used with your system has an approved request, named owner, defined access level, and current JML record; update or remove access when roles change or access is no longer needed.      | Hardware, Software, Network, Cloud, Data, Process | Engineering | JML log, quarterly recert report  | Continuous / Quarterly | STD-AC-001              |
 | AC-3 Access Enforcement          | Make sure your system uses approved authentication and authorization controls for all access, and that local, shared, hard-coded, or static credentials cannot bypass them.                                     | Hardware, Software, Network, Cloud, Data          | Engineering | IdP/PAM policy export             | Annual                 | STD-AC-001              |
@@ -147,7 +151,7 @@ Section 6 entries below are organized by family and reference the subordinate st
 
 ### 6.2 Audit and Accountability (AU)
 
-| **Control**                          | **Statement**                                                                                                                                                               | **System Applicability**                          | **Owner** | **Evidence**                                    | **Min Freq** | **Std**    |
+| **Control**                          | **Statement**                                                                                                                                                               | **System Applicability**                          | **CERG Control Owner** | **Evidence**                                    | **Min Freq** | **Std**    |
 | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | --------- | ----------------------------------------------- | ------------ | ---------- |
 | AU-2 Event Logging                   | Make sure your system sends required security, administrative, authentication, and activity logs to the SIEM or approved OT one-way collection point.                       | Hardware, Software, Network, Cloud, Data          | Risk      | SIEM source inventory, gap report               | Monthly      | STD-LM-001 |
 | AU-6 Audit Review                    | Review and respond to alerts generated from your system logs, and correct coverage or tuning gaps identified by Risk.                                                       | Hardware, Software, Network, Cloud, Data, Process | Risk      | Detection coverage report, triage queue metrics | Continuous   | STD-LM-001 |
@@ -157,7 +161,7 @@ Section 6 entries below are organized by family and reference the subordinate st
 
 ### 6.3 Configuration Management (CM)
 
-| **Control**                     | **Statement**                                                                                                                                                                                         | **System Applicability**                          | **Owner**          | **Evidence**                               | **Min Freq** | **Std**                 |
+| **Control**                     | **Statement**                                                                                                                                                                                         | **System Applicability**                          | **CERG Control Owner**          | **Evidence**                               | **Min Freq** | **Std**                 |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | ------------------ | ------------------------------------------ | ------------ | ----------------------- |
 | CM-2 Baseline Configuration     | Apply the correct DISH baseline for your platform class and keep evidence showing the baseline was applied.                                                                                           | Hardware, Software, Network, Cloud                | Engineering        | DISH baseline catalog, scan report         | Continuous   | STD-CFG-001             |
 | CM-3 Change Control             | Submit production changes through change management before implementation and include security review when required.                                                                                  | Hardware, Software, Network, Cloud, Data, Process | Engineering        | CAB minutes, change records                | Continuous   | STD-IT-001 / STD-OT-001 |
@@ -168,7 +172,7 @@ Section 6 entries below are organized by family and reference the subordinate st
 
 ### 6.4 Contingency Planning (CP)
 
-| **Control**                       | **Statement**                                                                                                                                            | **System Applicability**                          | **Owner**   | **Evidence**                                 | **Min Freq**                | **Std**     |
+| **Control**                       | **Statement**                                                                                                                                            | **System Applicability**                          | **CERG Control Owner**   | **Evidence**                                 | **Min Freq**                | **Std**     |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | ----------- | -------------------------------------------- | --------------------------- | ----------- |
 | CP-2 Contingency Plan             | Make sure your system has a current cyber recovery plan mapped to its tier and coordinated with enterprise BCP requirements.                             | Hardware, Software, Network, Cloud, Data, Process | Engineering | Plan document, BCP interface record          | Annual                      | STD-RES-001 |
 | CP-4 Contingency Plan Testing     | Test the recovery plan on the required cadence, document lessons learned, and update RTO/RPO assumptions when results show gaps.                         | Hardware, Software, Network, Cloud, Data, Process | Engineering | Test report, lessons learned, register entry | Annual / BES Annual         | STD-RES-001 |
@@ -177,7 +181,7 @@ Section 6 entries below are organized by family and reference the subordinate st
 
 ### 6.5 Identification and Authentication (IA)
 
-| **Control**                                                   | **Statement**                                                                                                                                           | **System Applicability**                          | **Owner**   | **Evidence**                    | **Min Freq** | **Std**                 |
+| **Control**                                                   | **Statement**                                                                                                                                           | **System Applicability**                          | **CERG Control Owner**   | **Evidence**                    | **Min Freq** | **Std**                 |
 | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | ----------- | ------------------------------- | ------------ | ----------------------- |
 | IA-2 Identification and Authentication (Organizational Users) | Make sure all interactive human access to your system requires phishing-resistant MFA and does not allow legacy authentication.                         | Hardware, Software, Network, Cloud, Data          | Engineering | IdP policy, exception register  | Quarterly    | STD-AC-001              |
 | IA-3 Device Identification and Authentication                 | Make sure your system, device, or service presents the identifiers needed for IdP, NAC, CAP, or other network controls to recognize it where supported. | Hardware, Network, Cloud                          | Engineering | NAC / conditional-access policy | Annual       | STD-AC-001              |
@@ -185,7 +189,7 @@ Section 6 entries below are organized by family and reference the subordinate st
 
 ### 6.6 Risk Assessment, System and Information Integrity, Supply Chain (RA / SI / SR)
 
-| **Control**                                | **Statement**                                                                                                                                                                                                  | **System Applicability**                          | **Owner**          | **Evidence**                              | **Min Freq** | **Std**                  |
+| **Control**                                | **Statement**                                                                                                                                                                                                  | **System Applicability**                          | **CERG Control Owner**          | **Evidence**                              | **Min Freq** | **Std**                  |
 | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | ------------------ | ----------------------------------------- | ------------ | ------------------------ |
 | RA-3 Risk Assessment                       | Identify risks for your system, data, or process; document impact and likelihood; assign treatment; and keep the risk register current.                                                                        | Hardware, Software, Network, Cloud, Data, Process | Risk / Governance  | Risk register                             | Continuous   | PRC-RM-001               |
 | RA-5 Vulnerability Monitoring and Scanning | Make sure your system is assessed on the required cadence using authenticated scanning and the applicable DISH profile, or an approved passive/alternative method where active scanning is not allowed.        | Hardware, Software, Network, Cloud                | Risk               | Scan reports, SLA dashboard               | Continuous   | PRC-VM-001 / STD-CFG-001 |
@@ -196,7 +200,7 @@ Section 6 entries below are organized by family and reference the subordinate st
 
 ### 6.7 System and Communications Protection (SC)
 
-| **Control** | **Statement** | **System Applicability** | **Owner** | **Evidence** | **Min Freq** | **Std** |
+| **Control** | **Statement** | **System Applicability** | **CERG Control Owner** | **Evidence** | **Min Freq** | **Std** |
 |---|---|---|---|---|---|---|
 | SC-7 Boundary Protection | Make sure network boundaries, cloud security groups, OT ESP/EAP boundaries, and inter-zone paths are explicitly defined, approved, filtered, logged, and reviewed; direct bypass paths are prohibited. | Network, Cloud, Data, Process | Engineering | Segmentation diagram, firewall rule review, cloud security group export | Quarterly / On change | STD-NET-001 / STD-OT-001 |
 | SC-8 Transmission Confidentiality and Integrity | Protect sensitive data and administrative traffic in transit with approved cryptographic protocols; prohibit cleartext protocols for Restricted, CUI, and administrative paths unless formally risk accepted. | Network, Cloud, Data | Engineering | TLS / certificate scan, exception register | Continuous / Annual | STD-CR-001 / STD-CUI-001 |
@@ -204,20 +208,20 @@ Section 6 entries below are organized by family and reference the subordinate st
 
 ### 6.8 Assessment, Authorization, and Monitoring (CA)
 
-| **Control** | **Statement** | **System Applicability** | **Owner** | **Evidence** | **Min Freq** | **Std** |
+| **Control** | **Statement** | **System Applicability** | **CERG Control Owner** | **Evidence** | **Min Freq** | **Std** |
 |---|---|---|---|---|---|---|
 | CA-2 Control Assessment | Assess implemented controls on the defined cadence using self-assessment, evidence review, and independent validation where required; record findings, owners, and remediation due dates. | Hardware, Software, Network, Cloud, Data, Process | Governance / Risk | Maturity scorecard, control test worksheet, findings register | Annual / Quarterly high-risk | GOV-MAT-001 / TMPL-AUD-001 |
 | CA-8 Penetration Testing | Conduct adversarial validation for in-scope systems per risk tier; document scope, rules of engagement, findings, remediation ownership, and validation retest. | Hardware, Software, Network, Cloud, Data, Process | Risk | Test plan, findings report, retest evidence | Annual / After material change | PRC-AV-001 |
 
 ### 6.9 Awareness and Training (AT)
 
-| **Control** | **Statement** | **System Applicability** | **Owner** | **Evidence** | **Min Freq** | **Std** |
+| **Control** | **Statement** | **System Applicability** | **CERG Control Owner** | **Evidence** | **Min Freq** | **Std** |
 |---|---|---|---|---|---|---|
 | AT-2 Literacy Training and Awareness | Make sure workforce members with cyber-relevant access complete role-appropriate security training before access and on the required refresh cadence; track exceptions to closure. | Process, Data, Cloud, Software | Governance | Training completion report, role curriculum mapping | Annual / On role assignment | GOV-TRN-001 / GOV-ONB-001 |
 
 ### 6.10 Incident Response (IR)
 
-| **Control** | **Statement** | **System Applicability** | **Owner** | **Evidence** | **Min Freq** | **Std** |
+| **Control** | **Statement** | **System Applicability** | **CERG Control Owner** | **Evidence** | **Min Freq** | **Std** |
 |---|---|---|---|---|---|---|
 | IR-2 Incident Response Training | Train incident-response participants and CERG support roles on escalation, evidence handling, communications, and playbook execution before they are assigned incident duties. | Process, Data, Cloud, Network | Risk / Governance | Exercise attendance, role training completion | Annual / Per exercise | PLN-IR-001 / PRC-IR-002 |
 | IR-4 Incident Handling | Triage, contain, investigate, eradicate, recover, and communicate incidents using approved playbooks while preserving evidence and recording decisions. | Hardware, Software, Network, Cloud, Data, Process | Risk | Incident case record, timeline, evidence package | Continuous | PLN-IR-001 / PRC-IR-002 |
@@ -225,20 +229,20 @@ Section 6 entries below are organized by family and reference the subordinate st
 
 ### 6.11 Physical and Environmental Protection (PE)
 
-| **Control** | **Statement** | **System Applicability** | **Owner** | **Evidence** | **Min Freq** | **Std** |
+| **Control** | **Statement** | **System Applicability** | **CERG Control Owner** | **Evidence** | **Min Freq** | **Std** |
 |---|---|---|---|---|---|---|
 | PE-2 Physical Access Authorizations | Maintain authorized physical access lists for cyber-relevant facilities, OT PSPs, and CUI work areas; grant and remove physical access through an approved workflow. | Hardware, Network, Data, Process | Governance / Engineering | Badge access roster, PSP access list | Quarterly | STD-OT-001 / PLN-CIP-001 |
 | PE-3 Physical Access Control | Enforce, log, and review physical entry to cyber-relevant facilities; require visitor escort and investigate unauthorized or anomalous access attempts. | Hardware, Network, Data, Process | Governance / Engineering | Badge logs, visitor logs, PSP inspection record | Monthly / Quarterly | STD-OT-001 / PLN-CIP-001 |
 
 ### 6.12 Planning (PL)
 
-| **Control** | **Statement** | **System Applicability** | **Owner** | **Evidence** | **Min Freq** | **Std** |
+| **Control** | **Statement** | **System Applicability** | **CERG Control Owner** | **Evidence** | **Min Freq** | **Std** |
 |---|---|---|---|---|---|---|
 | PL-1 Policy and Procedures | Maintain the approved policy, standard, procedure, plan, and template hierarchy with named owners, review cycles, status, and change history. | Process | Governance | Document catalog, review record, approval history | Annual / On major change | GOV-CAT-001 / GOV-STY-001 |
 
 ### 6.13 Program Management (PM)
 
-| **Control** | **Statement** | **System Applicability** | **Owner** | **Evidence** | **Min Freq** | **Std** |
+| **Control** | **Statement** | **System Applicability** | **CERG Control Owner** | **Evidence** | **Min Freq** | **Std** |
 |---|---|---|---|---|---|---|
 | PM-1 Information Security Program Plan | Maintain the CERG operating model, program scope, accountable pillars, service commitments, and reporting model so leadership can understand how the program is run. | Process | Governance | Operating model, service commitments, board report | Quarterly | GOV-OM-001 / GOV-MTR-001 / GOV-SLC-001 |
 | PM-9 Risk Management Strategy | Maintain the risk management strategy, taxonomy, appetite/tolerance guidance, and treatment workflow; ensure risk decisions are visible to accountable leadership. | Process, Data, Cloud, Network | Governance / Risk | RMF, risk taxonomy, risk register summary | Annual / Quarterly | GOV-RMF-001 / GOV-TAX-001 / PRC-RM-001 |
@@ -246,13 +250,13 @@ Section 6 entries below are organized by family and reference the subordinate st
 
 ### 6.14 Personnel Security (PS)
 
-| **Control** | **Statement** | **System Applicability** | **Owner** | **Evidence** | **Min Freq** | **Std** |
+| **Control** | **Statement** | **System Applicability** | **CERG Control Owner** | **Evidence** | **Min Freq** | **Std** |
 |---|---|---|---|---|---|---|
 | PS-2 Position Risk Designation | Designate role and position risk based on privileged access, CUI/BES scope, regulatory responsibility, and crown-jewel impact; verify required screening and authorization before access. | Process, Data, Cloud, Network | Governance | Role risk designation matrix, access precondition record | Annual / Before access | GOV-JA-001 / GOV-ONB-001 |
 
 ### 6.15 System and Services Acquisition (SA)
 
-| **Control** | **Statement** | **System Applicability** | **Owner** | **Evidence** | **Min Freq** | **Std** |
+| **Control** | **Statement** | **System Applicability** | **CERG Control Owner** | **Evidence** | **Min Freq** | **Std** |
 |---|---|---|---|---|---|---|
 | SA-9 External System Services | Make sure external systems and service providers meet documented security requirements, shared-responsibility obligations, evidence requirements, incident-notification terms, and flow-down clauses before use. | Software, Network, Cloud, Data, Process | Risk (TPRM) | Contract security clauses, vendor assessment, shared responsibility matrix | Continuous / Annual reassessment | PRC-TPRM-001 |
 
@@ -616,7 +620,7 @@ When a control in §6 or an overlay in §8 changes, Governance issues a "ripple 
 | Field | Value |
 |---|---|
 | **Document ID** | CERG-GOV-CB-001 |
-| **Version** | 2.0.1 |
+| **Version** | 2.1 |
 | **Status** | Approved |
 | **Effective Date** | 2026-09-01 |
 | **Classification** | Public |
@@ -633,6 +637,7 @@ When a control in §6 or an overlay in §8 changes, Governance issues a "ripple 
 
 | **Version** | **Date** | **Author** | **Change Summary** |
 |---|---|---|---|
+| 2.1 | 2026-09-01 | Governance Pillar Leader | Clarified control ownership and local applicability: CERG owns control authority and assurance, while first-line owners implement applicable controls. Renamed the baseline owner field to CERG Control Owner and clarified local Not Applicable decisions. |
 | 2.0.1 | 2026-09-01 | Governance Pillar Leader | Removed the unsupported geographic exception condition from AC-17; deviations are governed through the risk and exception process. |
 | 2.0 | 2026-06-17 | Cyber Governance | Added the AI overlay to the overlay matrix and regulator mapping, linking AI control evidence to STD-AI-001 and the AI intake, sanctioned-tools, and system/model register templates. |
 | 1.21 | 2026-05-22 | Cyber Governance | Updated framework references and normalized section numbering to align with the current corpus structure. |

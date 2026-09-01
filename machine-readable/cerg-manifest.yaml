@@ -128,7 +128,7 @@
   title: Unified Control Baseline
   document_type: governance_instrument
   domain: CB
-  version: 2.0.1
+  version: 2.1
   status: Approved
   classification: Public
   publication_profile: public
@@ -137,7 +137,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: governance/CERG-GOV-CB-001_Unified_Control_Baseline.md
   source_file: CERG-GOV-CB-001_Unified_Control_Baseline.md
-  source_hash: 7b5208124ae85fed2d6ee85412217907e8e2fa6c1232dea8a8c6cc9d7dd74f04
+  source_hash: 0692b17aa44f2b30da3a51cf4e2fc45b134af9b2a17307453677c3782f37bc82
   canonical_url: https://github.com/m0dernz/CERG/blob/main/governance/CERG-GOV-CB-001_Unified_Control_Baseline.md
   llm_include: true
   llm_priority: medium
