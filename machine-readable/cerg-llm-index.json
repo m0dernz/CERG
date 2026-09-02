@@ -3,7 +3,7 @@
   "generated": "2026-09-02",
   "source": "local markdown corpus",
   "total_documents": 149,
-  "total_tokens_estimate": 979557,
+  "total_tokens_estimate": 979621,
   "by_type": {
     "readme": 15,
     "governance-instrument": 42,
@@ -1647,8 +1647,8 @@
         32211
       ],
       "lines_count": 460,
-      "chars": 26423,
-      "tokens": 7549,
+      "chars": 26644,
+      "tokens": 7613,
       "summary": "CERG PLN document: CUI CMMC Operational Package"
     },
     {

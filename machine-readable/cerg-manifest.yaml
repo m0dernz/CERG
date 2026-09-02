@@ -937,7 +937,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: plans/CERG-PLN-CUI-001_CUI_CMMC_Operational_Package.md
   source_file: CERG-PLN-CUI-001_CUI_CMMC_Operational_Package.md
-  source_hash: c14deb7da23e43e6a204c0969b56413631970204e60fc35f3946ae62be744b3e
+  source_hash: 01d5067c8ebcd238a4a75e53d69a65786966e30b9e5a5078cf1c421638bd4f96
   canonical_url: https://github.com/m0dernz/CERG/blob/main/plans/CERG-PLN-CUI-001_CUI_CMMC_Operational_Package.md
   llm_include: true
   llm_priority: medium
