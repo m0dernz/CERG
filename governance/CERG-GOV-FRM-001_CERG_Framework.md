@@ -391,7 +391,7 @@ The CERG model is designed to produce Adaptive-tier behavior through its structu
 |---|---|---|
 |Risk management is integrated into business decisions|Engineering engages at the business requirements stage - before designs are set or budgets committed. Security cost is a design input, not an afterthought.|Engineering|
 |Threat intelligence informs priorities|Risk maintains a live threat intelligence function including ICS/OT-specific sources. Intelligence is distributed to Engineering (design decisions), IR (detection), and Governance (policy updates).|Risk|
-|Lessons learned drive improvement|Post-incident reviews, penetration test retrospectives, and audit findings are tracked in the Governance risk register with assigned owners and improvement actions.|Governance, Risk|
+|Lessons learned drive improvement|Post-incident reviews, adversarial-validation retrospectives, and audit findings are assessed as lessons. Specific risks remain in the risk register; systemic program improvements are tracked in IMPREG-001.|Governance, Risk|
 |Risk appetite is defined and applied consistently|Governance maintains a documented risk appetite and tolerance framework. The "yes, and..." model applies this consistently across all risk treatment decisions.|Governance|
 |Continuous improvement of the security program|Governance conducts periodic QA reviews of Engineering and Risk outputs. The CISO reviews CERG performance metrics quarterly.|Governance, All|
 |Cybersecurity is viewed as a value driver|Engineering's consulting model and "yes, and..." Governance orientation build organizational trust. The business experiences security as an enabler, not an obstacle.|All|

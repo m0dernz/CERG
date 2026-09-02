@@ -1,6 +1,6 @@
 # cerg-manifest.yaml
 # DERIVED ARTIFACT — authoritative source is the CERG markdown corpus
-# Generated: 2026-09-01 | Owner: Governance Pillar Leader (Document Control)
+# Generated: 2026-09-02 | Owner: Governance Pillar Leader (Document Control)
 # Regenerate on any change to source documents
 # See METADATA.yaml for full governance information
 
@@ -297,7 +297,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: governance/CERG-GOV-FRM-001_CERG_Framework.md
   source_file: CERG-GOV-FRM-001_CERG_Framework.md
-  source_hash: 16230327ed0573dc9363203e9d7a8250ffb1024f9e53f289054fac4d2c5620ec
+  source_hash: 26114a73c0254a9c2082a210e3cb256d77a5891587a65e22541e3c73084a0236
   canonical_url: https://github.com/m0dernz/CERG/blob/main/governance/CERG-GOV-FRM-001_CERG_Framework.md
   llm_include: true
   llm_priority: high
@@ -1157,7 +1157,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: procedures/CERG-PRC-LL-001_Lessons_Learned_and_Program_Improvement_Procedure.md
   source_file: CERG-PRC-LL-001_Lessons_Learned_and_Program_Improvement_Procedure.md
-  source_hash: d0d477474b314bef1347863873be80a701bb2e4bd1f8c4e45462334fd697211a
+  source_hash: e22ac1a4e324d6feefe44685899dc383e1af43936165f66b9c47de8579c0f1a1
   canonical_url: https://github.com/m0dernz/CERG/blob/main/procedures/CERG-PRC-LL-001_Lessons_Learned_and_Program_Improvement_Procedure.md
   llm_include: true
   llm_priority: medium
@@ -1177,7 +1177,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: procedures/CERG-PRC-RM-001_Risk_Register_and_Exception_Process.md
   source_file: CERG-PRC-RM-001_Risk_Register_and_Exception_Process.md
-  source_hash: 0098c1784b0ce79619cd06782636629e7356ab9fb48f99152cd4bbb4f21b0780
+  source_hash: 3271f2b3fc51f10f4855481f39fca6812bfa90a51ec0dcfb6d61ccc5d90b4362
   canonical_url: https://github.com/m0dernz/CERG/blob/main/procedures/CERG-PRC-RM-001_Risk_Register_and_Exception_Process.md
   llm_include: true
   llm_priority: high

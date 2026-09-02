@@ -471,7 +471,7 @@ Approvers may delegate within their authority but shall document the delegation.
 | **Item** | **Cadence** | **Owner** |
 |---|---|---|
 | Risk owner self-review of open risks in their scope | Quarterly | Risk Owner |
-| Governance curation pass (quality, duplicates, status) | Monthly | Governance |
+| Governance curation pass (quality, duplicates, status, and systemic-theme identification) | Monthly | Governance |
 | CERG leadership review (Engineering + Risk + Governance) | Monthly | Governance |
 | CISO-level risk review with material movement and overdue items | Quarterly | CISO + Governance |
 | Executive / board risk briefing | Quarterly (or per board protocol) | CISO |
@@ -527,6 +527,7 @@ The risk register is the integration point for several other programs. Risk-regi
 | Architecture / Engineering Review | Pre-production review findings open risks where acceptance is sought to deploy. |
 | Awareness & Insider Programs | Concentrated insider-risk indicators are recorded (with appropriate restricted visibility). |
 | Audit | Internal Audit and external audit observations open or update risk entries. |
+| Lessons Learned and Program Improvement ([CERG-PRC-LL-001](CERG-PRC-LL-001_Lessons_Learned_and_Program_Improvement_Procedure.md)) | During normal curation and review, recurring risk themes and repeated exception-renewal patterns that indicate a systemic gap are supplied to the Lessons Learned process. Approved program-level changes are tracked and verified in [IMPREG-001](../governance/CERG-GOV-IMPREG-001_Program_Improvement_Register.md), with cross-references to the originating risk records. Specific risks and exceptions remain in this register. |
 
 The register is not a parallel system to these programs. It is the connective tissue that lets each program point to the same set of facts.
 

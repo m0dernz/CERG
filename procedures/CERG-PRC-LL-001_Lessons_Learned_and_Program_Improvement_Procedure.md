@@ -37,9 +37,9 @@
 
 ## 1. Purpose and Scope
 
-The CERG Framework (CERG-GOV-FRM-001 Section 6.2) states that "Lessons learned drive improvement" and that "Post-incident reviews, penetration test retrospectives, and audit findings are tracked in the Governance risk register with assigned owners and improvement actions." The risk register (PRC-RM-001) is designed for risks: threats, vulnerabilities, likelihoods, treatments. It is not designed to track program-level improvements, aggregate cross-cutting patterns, or verify that lessons were absorbed into the program.
+The CERG Framework requires lessons learned to drive improvement. The risk register (PRC-RM-001) records specific risks: threats, vulnerabilities, likelihoods, and treatments. It is not designed to track program-level improvements, aggregate cross-cutting patterns, or verify that lessons were absorbed into the program. Those improvements are tracked in the Program Improvement Register (IMPREG-001), with cross-references to the originating risk where applicable.
 
-This procedure closes that gap. It defines how CERG collects, analyzes, and converts after-action findings into permanent program improvements. It applies to every CERG process, engagement, and control that generates a post-event review: incidents, penetration tests, red team exercises, audit findings, DR and BC exercises, tabletop exercises, near-miss events, metrics threshold breaches, and external intelligence shifts.
+This procedure defines how CERG collects, analyzes, and converts after-action findings into permanent program improvements. It applies to every CERG process, engagement, and control that generates a post-event review: incidents, penetration tests, red team exercises, audit findings, DR and BC exercises, tabletop exercises, near-miss events, metrics threshold breaches, and external intelligence shifts.
 
 > **The Assessor Test**
 >
