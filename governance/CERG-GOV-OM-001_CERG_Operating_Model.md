@@ -72,6 +72,14 @@ CERG consolidates the three core security activities, building secure systems, m
 
 CERG operates as one team. The pillars provide structure for skill development, work intake, and accountability, not boundaries to hide behind. Cross-pillar collaboration is the norm. Every Engineering review involves Risk perspective. Every Risk finding has a Governance disposition. Every Governance policy is validated for operational practicability by Engineering and Risk before publication.
 
+### 2.4 Lines of Accountability and Assurance
+
+CERG's pillars describe cybersecurity capabilities, not who operates every control. **First-line system, service, business, IT, and OT owners** implement and operate the controls applicable to the assets and services they own, and produce the resulting operational records.
+
+CERG is an integrated **second-line cybersecurity function**. Engineering supplies technical design authority, practical guardrails, and viable alternatives; Risk maintains exposure visibility and validates whether controls hold up under attack; Governance is the second-line authority for control intent, evidence criteria, decisions, and assurance. Engineering, Risk, and Governance each produce evidence from their work, while Governance assures that the combined evidence is attributable, current, retrievable, and fit for decisions or scrutiny.
+
+**Independent assurance and external scrutiny** consume those outputs differently. Internal Audit, where established, provides independent assurance. External auditors and assessors test or attest; regulators supervise and enforce; insurers underwrite; and the board governs and challenges through CISO reporting. CERG makes these engagements efficient by maintaining decision-useful evidence, defensible risk records, and clear control and regulatory mappings.
+
 ---
 
 ## 3. The Three Pillars
@@ -131,7 +139,7 @@ CERG operates as one team. The pillars provide structure for skill development, 
 The following functions are intentionally outside CERG and operate under separate charters:
 
 - **Security Awareness program ownership.** A distinct function under CISO oversight, coordinated with Governance.
-- **Incident Response operations and the IR plan itself.** A standing Incident Response team within Cybersecurity, reporting to the CISO, owns [`CERG-PLN-IR-001`](../plans/CERG-PLN-IR-001_Incident_Response_Plan.md) and operates the IR capability. CERG feeds detection, vulnerability context, asset documentation, and post-incident risk-register entries into the IR team; CERG does not maintain the plan, run the exercises, or own the regulatory notification clocks. During an active incident, CERG pillars provide Lead Investigator, Engineering Lead, and Governance Lead roles per the IR team's call.
+- **Incident Response operations and the IR plan itself.** A standing Incident Response team within Cybersecurity, reporting to the CISO, is a first-line security function. It owns [`CERG-PLN-IR-001`](../plans/CERG-PLN-IR-001_Incident_Response_Plan.md), incident command, containment, eradication, recovery, and the operational incident record. This preserves clear command authority and incident-tempo decisions while CERG supplies detection, vulnerability, asset, engineering, risk, and governance context. Governance defines organization-wide evidence-quality expectations, supports regulatory and decision context, and assures post-incident records; it does not gate response or evidence collection. CERG does not maintain the IR plan or run IR exercises. External notifications follow the Incident Commander, CISO, and Legal decision path in §4.2. During an active incident, CERG pillars provide Lead Investigator, Engineering Lead, and Governance Lead roles per the IR team's call.
 - **Physical Security (non-cyber).** Owned by Facilities; CERG coordinates for assets within CIP-006 / PE-family scope.
 - **Privacy program.** A distinct function under Legal / Privacy leadership; coordinates with Governance for breach notification and Restricted-data handling.
 - **Business Continuity (non-cyber).** Owned by Enterprise Risk / Operations; CERG coordinates for cyber-driven business continuity activations.
@@ -479,7 +487,10 @@ CERG operates inside a broader organizational ecosystem. The following interface
 |---|---|
 | **Incident Response (standing team)** | Owns [`CERG-PLN-IR-001`](../plans/CERG-PLN-IR-001_Incident_Response_Plan.md). CERG feeds detection telemetry, vulnerability context, asset documentation, and post-incident risk-register entries. During an active incident, CERG provides Lead Investigator (Risk), Engineering Lead, and Governance Lead roles per the IR team's call. |
 | **Security Awareness** | Awareness owns training program design, delivery cadence, completion evidence, and phishing-simulation communications. Governance coordinates policy/control content alignment and evidence quality; Risk provides threat-actor context and may support phishing-simulation analysis. CERG does not own enterprise training completion or awareness campaign operations. |
-| **Internal Audit** | Receives evidence from Governance; engages SMEs from Engineering and Risk; findings tracked in the risk register. |
+| **Internal Audit** | Where established, provides independent assurance. Receives decision-useful evidence coordinated by Governance; engages SMEs from Engineering and Risk; findings enter the applicable risk, audit, or improvement process. |
+| **External Assessors and Auditors** | Governance coordinates control-evidence packages, system-boundary documentation, and SMEs for CMMC, SOC, customer, and other assessment windows. |
+| **Regulators** | Governance coordinates regulatory mappings, evidence, and change-impact analysis. Incident-specific notifications follow the Incident Commander, CISO, and Legal decision path. |
+| **Insurers and Customers** | Governance coordinates proportionate risk-posture, control-maturity, and assurance information for underwriting, contractual, or due-diligence requests. |
 | **Legal** | Engaged at activation for Sev 1/2 incidents; engaged for regulatory interpretation, breach notification, customer contractual obligations, and privilege judgments. |
 | **Privacy / DPO** | Coordinates with Governance on Restricted-data handling and breach notification under GDPR / HIPAA / state laws. |
 | **Enterprise Risk Management** | Receives quarterly cyber risk feed at the Cyber Oversight Group (§4.4); interface ensures cyber risks appear in enterprise risk reporting. |

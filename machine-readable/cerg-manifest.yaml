@@ -1,6 +1,6 @@
 # cerg-manifest.yaml
 # DERIVED ARTIFACT — authoritative source is the CERG markdown corpus
-# Generated: 2026-09-02 | Owner: Governance Pillar Leader (Document Control)
+# Generated: 2026-09-03 | Owner: Governance Pillar Leader (Document Control)
 # Regenerate on any change to source documents
 # See METADATA.yaml for full governance information
 
@@ -597,7 +597,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: governance/CERG-GOV-OM-001_CERG_Operating_Model.md
   source_file: CERG-GOV-OM-001_CERG_Operating_Model.md
-  source_hash: cf5fbb6c89a1b95b3e3f2742ddf91f19f06979bfa8265dc8e39b1184d7ed41dd
+  source_hash: 35b15f315ba3ac0f250fa3d8fc39793855a733eeef140ba36a55de968d3b4007
   canonical_url: https://github.com/m0dernz/CERG/blob/main/governance/CERG-GOV-OM-001_CERG_Operating_Model.md
   llm_include: true
   llm_priority: high
