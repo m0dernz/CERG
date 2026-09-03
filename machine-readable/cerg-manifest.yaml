@@ -1257,7 +1257,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: procedures/CERG-PRC-VM-001_Exposure_Management_Procedure.md
   source_file: CERG-PRC-VM-001_Exposure_Management_Procedure.md
-  source_hash: 1cb9d3eda3343028052befbf1960712023d9c326eb4f532fc0beee9600aa9cd9
+  source_hash: 57c23c0269bf9b2dd47a47ae06776c0fc623ae6ee61c6ee575690549eba13613
   canonical_url: https://github.com/m0dernz/CERG/blob/main/procedures/CERG-PRC-VM-001_Exposure_Management_Procedure.md
   llm_include: true
   llm_priority: high

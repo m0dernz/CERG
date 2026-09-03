@@ -188,8 +188,12 @@ A validated condition is not automatically an exposure. This step asks: can an a
 | Is it reachable? | Network path from Internet, from user population, from adjacent trust zones |
 | Is authentication required? | Anonymous access vs. authenticated-only |
 | Is the asset segmented? | Network ACLs, microsegmentation, jump-host-only access |
-| Is there a compensating control? | WAF rule, EDR detection, IPS signature |
+| Does a compensating control materially interrupt exploitation or impact? | Relevant CB-001 control ID; current CEF-001 and/or adversarial-validation evidence; evidence date and scope; known degradation conditions |
 | Is there a plausible path to data, privilege, disruption, or lateral movement? | Data classification on asset, privilege level, blast radius |
+
+When a compensating control is used to lower an exposure classification, defer treatment, or support residual-risk analysis, the Exposure Management record shall cite the relevant CB-001 control, current control-effectiveness or adversarial-validation evidence, evidence date, scope, and any known degradation or failure condition relevant to the path.
+
+A claimed control is not sufficient. Absent, stale, irrelevant, failed, or degraded evidence cannot support a compensated disposition. The applicable control owner addresses a failed or degraded control through the relevant control-effectiveness, adversarial-validation, Governance, and treatment processes; Exposure Management consumes that result as path context. This does not change the risk-acceptance authority in RMF-001.
 
 ### 6.2 KEV Acceleration
 
@@ -207,7 +211,7 @@ After validation and reachability assessment, every observation is classified in
 |---------------|-----------|-------------------|------------|
 | **Non-issue / Scanner Artifact** | The observation does not represent a real condition (backported fix, version-only match, scanner error) | Close with evidence | N/A |
 | **Hygiene Debt** | A real weakness exists but no reachable exposure path has been confirmed | Track; address in patch cycle | Patch hygiene cadence |
-| **Confirmed Flaw, Not Currently Exposed** | The flaw exists on a reachable asset but a compensating control blocks exploitation | Monitor control; plan remediation | Next maintenance window |
+| **Confirmed Flaw, Not Currently Exposed** | The flaw exists on a reachable asset but a compensating control, supported by current and relevant evidence, blocks exploitation or materially interrupts impact | Monitor control; plan remediation | Next maintenance window |
 | **Confirmed Exposure** | A reachable, exploitable path exists | Treat per SLA | Severity-tiered SLA (see §7.2) |
 | **Material Risk** | Confirmed exposure on a crown jewel, regulated system, or asset with Restricted data; OR active exploitation observed | Emergency treatment | PPR tier |
 
