@@ -90,6 +90,7 @@ The [ADR log](governance/CERG-GOV-ADR-001_Architecture_Decision_Records.md) capt
 | Scoping or pricing a CERG engagement | [Engagement Playbook](practice-assets/engagement-playbook-v1.md) |
 | Looking for the full control set | [100-Core Control Baseline](governance/CERG-GOV-CB-002_100-Core_Control_Baseline.md) |
 | Understanding why specific choices were made | [Architecture Decision Records](governance/CERG-GOV-ADR-001_Architecture_Decision_Records.md) |
+| Tailoring or maintaining the practice layer | [Practice Assets Operating Guide](practice-assets/README.md) |
 | New to CERG (upstream) | [START-HERE.md](START-HERE.md) |
 | Using an AI assistant | [ADOPT-WITH-AN-AGENT.md](ADOPT-WITH-AN-AGENT.md) |
 | Contributing upstream | [CONTRIBUTING.md](CONTRIBUTING.md) |
