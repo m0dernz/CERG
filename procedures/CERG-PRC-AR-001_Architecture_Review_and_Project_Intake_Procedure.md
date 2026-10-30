@@ -6,7 +6,7 @@
 | | |
 |---|---|
 | **Document ID** | CERG-PRC-AR-001 |
-| **Version** | 1.6 |
+| **Version** | 1.7 |
 | **Status** | Approved |
 | **Classification** | Public |
 | **Owner** | Engineering Pillar Leader |
@@ -24,12 +24,12 @@
 1. [Purpose and Scope](#1-purpose-and-scope)
 2. [Roles and Responsibilities](#2-roles-and-responsibilities)
 3. [The Five-Phase Engagement Model](#3-the-five-phase-engagement-model)
-4. [Who Needs a Review, and Who Doesn't](#4-who-needs-a-review--and-who-doesnt)
-5. [Phase 1, Intake](#5-phase-1--intake)
-6. [Phase 2, Architecture Review and Threat Model](#6-phase-2--architecture-review-and-threat-model)
-7. [Phase 3, Build-Time Engagement](#7-phase-3--build-time-engagement)
-8. [Phase 4, Pre-Production Security Review](#8-phase-4--pre-production-security-review)
-9. [Phase 5, Production Handoff and Go-Live](#9-phase-5--production-handoff-and-go-live)
+4. [Who Needs a Review, and Who Doesn't](#4-who-needs-a-review-and-who-doesnt)
+5. [Phase 1, Intake](#5-phase-1-intake)
+6. [Phase 2, Architecture Review and Threat Model](#6-phase-2-architecture-review-and-threat-model)
+7. [Phase 3, Build-Time Engagement](#7-phase-3-build-time-engagement)
+8. [Phase 4, Pre-Production Security Review](#8-phase-4-pre-production-security-review)
+9. [Phase 5, Production Handoff and Go-Live](#9-phase-5-production-handoff-and-go-live)
 10. [Required Diagrams](#10-required-diagrams)
 11. [Templates](#11-templates)
 12. [Metrics](#12-metrics)
@@ -609,7 +609,7 @@ Good governance makes projects faster because teams can design correctly before 
 | | |
 |---|---|
 | **Document ID** | CERG-PRC-AR-001 |
-| **Version** | 1.6 |
+| **Version** | 1.7 |
 | **Approved By** | CISO |
 | **Next Review** | Annual / on platform or process change |
 | **Change Log** | 1.3 - Reconciled technical review, go-live, gate, and first-line operating authority. 1.2 - Clarified standalone intake template authority and procedure-owned closure records. 1.1 - Added Appendix A worked example. 1.0 - Initial publication. Establishes intake, review, threat-model, build-time, pre-prod, and handoff phases with the citizen-development carve-out. |
@@ -618,6 +618,7 @@ Good governance makes projects faster because teams can design correctly before 
 
 | **Version** | **Date** | **Author** | **Change Summary** |
 |---|---|---|---|
+| 1.7 | 2026-10-30 | Governance Pillar Leader | Patch (#285): repaired 6 table-of-contents anchors whose slugs no longer matched their headings. No content change. |
 | 1.6 | 2026-10-30 | Governance Pillar Leader | Authority reconciliation (#280): CISO escalation settles the technical disposition and cannot itself authorize, deny, or compel go-live, which is the accountable owner's decision. Appendix A.7 sign-offs now route the KMS key type acceptance to the Business Owner co-signed per RMF-001 §9.7, matching A.4 and A.6. |
 | 1.5 | 2026-10-30 | Engineering Pillar Leader | Reconciled the go-live decision with the canonical RACI. The roles table claimed the Project Sponsor / Business Owner owns the go-live decision unconditionally, while §6.4, §8.3, the §9 sign-off list and OM-001 §9 all say the business or service owner decides, and RAC-001 §6.1 assigns the accountable role to the First-Line Service Owner. The roles table now names the residual-risk ownership only and defers the go-live decision to RAC-001 §6.1. No authority changed; one claim stopped contradicting four others. |
 | 1.4 | 2026-10-30 | Engineering Pillar Leader | Named the two disposition sets by phase: §6.4 now defines its three Phase 2 design dispositions beside §8.3's three Phase 4 pre-production dispositions, so one set can no longer be read for the other. §6.4's definitions no longer use "blocking", which §7.3 uses for a severity rating. Corrected the third spelling `Ready-with-Acceptance` in the §12 Phase 4 metric. Moved two example artifacts off reviewer authority and onto `RMF-001` §9.7: finding F04 in the Phase 2 example routes a Medium finding for Business Owner acceptance, co-signed, instead of recording the reviewer accepting it, while the Phase 4 example records the KMS acceptance as completed so its `Ready-with-Risk-Acceptance` disposition is supported by its own evidence row. |
