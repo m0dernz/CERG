@@ -6,7 +6,7 @@
 | | |
 |---|---|
 | **Document ID** | CERG-PLN-CUI-001 |
-| **Version** | 1.23 |
+| **Version** | 1.24 |
 | **Status** | Approved |
 | **Classification** | Public |
 | **Owner** | CMMC / Federal Compliance Manager |
@@ -95,6 +95,8 @@ Excludes:
 
 The System Security Plan is the assessor-facing description of the CUI environment and how each 800-171 practice is implemented.
 
+> **Who authorizes this system.** Where a formal external authorization regime appoints an authorizing official, that official remains the regime's authorizer. CERG's technical disposition ([`CERG-GOV-RMF-001`](../governance/CERG-GOV-RMF-001_Risk_Management_Framework.md) §7) and the residual-risk acceptance recorded under §9.7 are inputs to that decision. They are not a replacement production gate, and CERG does not hold the authorizing role.
+
 ```
 SYSTEM SECURITY PLAN - <CUI System / Enclave Name>     SSP-CUI-NNN
 
@@ -103,7 +105,7 @@ SYSTEM SECURITY PLAN - <CUI System / Enclave Name>     SSP-CUI-NNN
    System Type            (enclave / app / hybrid)
    Operational Status
    Executive Sponsor / System Representative
-   Authorizing Official (CISO)
+   Authorizing Official (the authority the external regime appoints; CERG disposition and RMF-001 §9.7 acceptance feed it)
    Information System Security Point of Contact (CMMC / Federal Compliance Manager or delegate)
    System Boundary Description (Section 3.3 instance)
 
@@ -453,8 +455,8 @@ For cloud / SaaS providers handling CUI that are not FedRAMP-authorized, the equ
 | | |
 |---|---|
 | **Document ID** | CERG-PLN-CUI-001 |
-| **Version** | 1.23 |
+| **Version** | 1.24 |
 | **Approved By** | CISO |
 | **Next Review** | Annual / on regulatory change |
-| **Change Log** | 1.0 - Initial publication. SSP, POA&M, SPRS, boundary, flow map, category register, evidence matrix, readiness, C3PAO logistics, subcontractor register, FedRAMP equivalency. 1.22 - Added Mock CMMC Assessment Procedure (§11.2) with scope, assessor assignment, practice-by-practice evidence review, interview simulation, findings report, remediation timeline, and re-test. 1.23 - Patch (#280): repaired 2 in-page links whose anchors no longer matched their headings after earlier heading edits. No content change. |
+| **Change Log** | 1.0 - Initial publication. SSP, POA&M, SPRS, boundary, flow map, category register, evidence matrix, readiness, C3PAO logistics, subcontractor register, FedRAMP equivalency. 1.22 - Added Mock CMMC Assessment Procedure (§11.2) with scope, assessor assignment, practice-by-practice evidence review, interview simulation, findings report, remediation timeline, and re-test. 1.23 - Patch (#280): repaired 2 in-page links whose anchors no longer matched their headings after earlier heading edits. No content change. 1.24 - Authority reconciliation (#280): the SSP's authorizing-official field now names the authority the external regime appoints rather than the CISO, and the SSP introduction states that CERG's disposition and RMF-001 §9.7 acceptance are inputs to that decision, not a replacement production gate. No ATO tier, record, or decision right added. |
 

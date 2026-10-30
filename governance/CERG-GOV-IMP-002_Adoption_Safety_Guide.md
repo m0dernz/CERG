@@ -1,7 +1,7 @@
 | | |
 |---|---|
 | **Document ID** | CERG-GOV-IMP-002 |
-| **Version** | 1.4 |
+| **Version** | 1.5 |
 | **Status** | Approved |
 | **Classification** | Public |
 | **Owner** | Governance Pillar Leader |
@@ -403,6 +403,7 @@ These combinations create unacceptable risk under any circumstances. If your tea
 - **Evidence producer AND evidence tester for the same control** — evidence must be independently validated.
 - **Exception requester AND exception approver for the same exception** — approval must come from a different person.
 - **Incident Commander AND post-incident lessons-learned approver for the same incident** — lessons learned require independent review.
+- **Security operating the service AND asserting its independent effectiveness.** Where CERG or Security operates a service, it is first line for that scope: the independent technical-effectiveness claim is suspended until a named independent assessor verifies the outcome ([`CERG-GOV-OM-001`](CERG-GOV-OM-001_CERG_Operating_Model.md) §3.1). A team that cannot name an independent assessor cannot make that claim. State this boundary when you adopt, rather than discover it after the first assurance review.
 
 ### Minimum Separation of Duties
 
@@ -462,7 +463,7 @@ Changing these breaks the operating model. If you must change them, document the
 | Field | Value |
 |---|---|
 | **Document ID** | CERG-GOV-IMP-002 |
-| **Version** | 1.4 |
+| **Version** | 1.5 |
 | **Status** | Approved |
 | **Effective Date** | 2026-06-11 |
 | **Classification** | Public |
@@ -479,6 +480,7 @@ Changing these breaks the operating model. If you must change them, document the
 
 | **Version** | **Date** | **Author** | **Change Summary** |
 |---|---|---|---|
+| 1.5 | 2026-10-30 | Governance Pillar Leader | Authority reconciliation (#280): states the adoption fit boundary for an organization where CERG or Security operates the service. It is first line for that scope, so the independent technical-effectiveness claim is suspended until a named independent assessor verifies the outcome, per OM-001 §3.1. The boundary is stated at adoption rather than discovered later. No new role, record, or decision right. |
 | 1.4 | 2026-06-24 | Governance Pillar Leader | Linked the Adoption Safety Guide to the central Anti-Pattern Catalog for cross-domain failure-mode reference. |
 | 1.3 | 2026-06-24 | Governance Pillar Leader | Added tool-versus-capability adoption anti-pattern and evidence test for capability claims. |
 | 1.2 | 2026-06-24 | Governance Pillar Leader | Removed older example-specific language for utility branding, fixed hard-coded role and headcount examples, and updated adversarial-validation terminology. |

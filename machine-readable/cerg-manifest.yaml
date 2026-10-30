@@ -368,7 +368,7 @@
   title: Adoption Safety Guide
   document_type: governance_instrument
   domain: IMP
-  version: 1.4
+  version: 1.5
   status: Approved
   classification: Public
   publication_profile: public
@@ -377,7 +377,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: governance/CERG-GOV-IMP-002_Adoption_Safety_Guide.md
   source_file: CERG-GOV-IMP-002_Adoption_Safety_Guide.md
-  source_hash: 323b217830636ef1f45d3345e4da515df6cd1e0ce5b631c9385beba4e061c364
+  source_hash: e4e3653d372153fd2f8834d93e15201fd3325709bf3784c7edbb9869a0e62bd2
   canonical_url: https://github.com/m0dernz/CERG/blob/main/governance/CERG-GOV-IMP-002_Adoption_Safety_Guide.md
   llm_include: true
   llm_priority: medium
@@ -928,7 +928,7 @@
   title: CUI CMMC Operational Package
   document_type: plan
   domain: CUI
-  version: 1.23
+  version: 1.24
   status: Approved
   classification: Public
   publication_profile: public
@@ -937,7 +937,7 @@
   parent_artifact: 'CERG-POL-001 — Cybersecurity Policy'
   source_path: plans/CERG-PLN-CUI-001_CUI_CMMC_Operational_Package.md
   source_file: CERG-PLN-CUI-001_CUI_CMMC_Operational_Package.md
-  source_hash: 9e87d9f47207d6b824c47dee7d8d97c41c4a3bd9920045fe717eeecb1b65d568
+  source_hash: c6d9de96fcb988944c93a1e3a9b392116a05de2cc5f3c412c5ac5bd78524c5e3
   canonical_url: https://github.com/m0dernz/CERG/blob/main/plans/CERG-PLN-CUI-001_CUI_CMMC_Operational_Package.md
   llm_include: true
   llm_priority: medium
