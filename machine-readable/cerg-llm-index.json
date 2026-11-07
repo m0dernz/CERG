@@ -138,8 +138,8 @@
       "owner": null,
       "path": "START-HERE.md",
       "lines_count": 233,
-      "chars": 20697,
-      "tokens": 5913,
+      "chars": 20698,
+      "tokens": 5914,
       "summary": "First 48 hours adoption guide \u2014 Lite, Standard, and Regulated paths."
     },
     {
@@ -1125,13 +1125,13 @@
       "type": "procedure",
       "pillar": "engineering",
       "status": "Approved",
-      "version": "1.6",
+      "version": "1.7",
       "classification": "Public",
       "owner": "Engineering Pillar Leader",
       "path": "procedures/CERG-PRC-AR-001_Architecture_Review_and_Project_Intake_Procedure.md",
-      "lines_count": 809,
-      "chars": 59559,
-      "tokens": 17017,
+      "lines_count": 810,
+      "chars": 59719,
+      "tokens": 17063,
       "summary": "CERG PRC document: Architecture Review and Project Intake Procedure"
     },
     {
