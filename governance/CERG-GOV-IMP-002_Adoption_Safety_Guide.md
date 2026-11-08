@@ -403,7 +403,7 @@ These combinations create unacceptable risk under any circumstances. If your tea
 - **Evidence producer AND evidence tester for the same control** — evidence must be independently validated.
 - **Exception requester AND exception approver for the same exception** — approval must come from a different person.
 - **Incident Commander AND post-incident lessons-learned approver for the same incident** — lessons learned require independent review.
-- **Security operating the service AND asserting its independent effectiveness.** Where CERG or Security operates a service, it is first line for that scope: the independent technical-effectiveness claim is suspended until a named independent assessor verifies the outcome ([`CERG-GOV-OM-001`](CERG-GOV-OM-001_CERG_Operating_Model.md) §3.1). A team that cannot name an independent assessor cannot make that claim. State this boundary when you adopt, rather than discover it after the first assurance review.
+- **Security operating the service AND asserting its independent effectiveness.** Where CERG or Security operates a service, it is first line for that scope: the independent technical-effectiveness claim is suspended until a named independent assessor verifies the outcome ([`CERG-GOV-OM-001`](CERG-GOV-OM-001_CERG_Operating_Model.md) §2.4). A team that cannot name an independent assessor cannot make that claim. State this boundary when you adopt, rather than discover it after the first assurance review.
 
 ### Minimum Separation of Duties
 
