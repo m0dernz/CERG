@@ -14,6 +14,8 @@ CERG is open source (CC BY 4.0) and contributions are welcome. This document exp
 
 **Suggest structural improvements.** New workstreams, maturity model domains, or metrics.
 
+**Claim a contributor listing.** If you have helped shape CERG through feedback, an issue, or a pull request, you can [claim and personalize your row](CONTRIBUTORS.md) with a small, maintainer-reviewed PR.
+
 ## Before you start
 
 1. **Read the framework first.** At minimum: [README](README.md), [START-HERE](START-HERE.md), [CERG Framework](governance/CERG-GOV-FRM-001_CERG_Framework.md), and [Operating Model](governance/CERG-GOV-OM-001_CERG_Operating_Model.md). Contributions that don't fit the three-pillar model or the document conventions will need rework.
