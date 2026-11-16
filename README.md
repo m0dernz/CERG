@@ -62,6 +62,7 @@ Use CERG to:
 | Looking for operational examples | [Day in the Life examples](examples/day-in-the-life/README.md) |
 | Comparing adoption paths | [Adoption Decision Tree](governance/CERG-GOV-IMP-005_Adoption_Decision_Tree_and_Dependency_Matrix.md) |
 | Contributing | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| Community contributors | [CONTRIBUTORS.md](CONTRIBUTORS.md) |
 
 ---
 
